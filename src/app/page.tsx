@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { AboutMe } from "@/components/AboutMe";
 import { PersonalInfo } from "@/components/PersonalInfo";
 import { ProfessionalExperience } from "@/components/ProfessionalExperience";
@@ -6,10 +7,7 @@ import { Languages } from "@/components/Languages";
 import { OnlineContent } from "@/components/OnlineContent";
 import { ProfessionalCertificates } from "@/components/ProfessionalCertificates";
 import { Footer } from "@/components/Footer";
-
-import type { Metadata } from "next";
 import { StructuredData } from "@/components/StructuredData";
-import { SEOHead } from "@/components/SEOHead";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hojat-gazestani.github.io"),
@@ -46,12 +44,19 @@ export const metadata: Metadata = {
     creator: "@hojat_gazestani",
     images: "/me.png",
   },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
+  themeColor: "#ffffff",
 };
 
 export default function Home() {
   return (
     <>
-      <SEOHead />
       <StructuredData />
       <div className="font-sans min-h-screen flex flex-col">
         <main className="flex-grow p-8 sm:p-20">
