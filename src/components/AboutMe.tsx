@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const AboutMe = () => {
-  const coreCompetencies = [
+  const skills = [
     "Python",
     "Linux",
     "OpenStack",
@@ -97,10 +97,10 @@ export const AboutMe = () => {
 
       <section>
         <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
-          Core Competencies
+          Skills
         </h2>
         <div className="flex flex-wrap gap-2">
-          {coreCompetencies.map((skill) => (
+          {skills.map((skill) => (
             <span
               key={skill}
               className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm font-medium"
