@@ -12,31 +12,31 @@ import {
 
 export const PersonalInfo = () => {
   const personalInfo = [
-    { icon: <FaMapMarkerAlt />, text: "Tehran, Iran" },
-    { icon: <FaPhone />, text: "(+98) 913 863 6926" },
+    { icon: <FaMapMarkerAlt size={20} />, text: "Tehran, Iran" },
+    { icon: <FaPhone size={20} />, text: "(+98) 913 863 6926" },
     {
-      icon: <FaEnvelope />,
-      text: "Hojat.Gazestani@gmail.com",
+      icon: <FaEnvelope size={20} />,
+      text: "Email",
       href: "mailto:Hojat.Gazestani@gmail.com",
     },
     {
-      icon: <FaGithub />,
-      text: "github.com/hojat-gazestani",
+      icon: <FaGithub size={20} />,
+      text: "GitHub",
       href: "https://github.com/hojat-gazestani",
     },
     {
-      icon: <FaMedium />,
-      text: "medium.com/@hojat_gazestani",
+      icon: <FaMedium size={20} />,
+      text: "Medium",
       href: "https://medium.com/@hojat_gazestani",
     },
     {
-      icon: <FaLinkedin />,
-      text: "linkedin.com/in/hojat-gazestani",
+      icon: <FaLinkedin size={20} />,
+      text: "LinkedIn",
       href: "https://www.linkedin.com/in/hojat-gazestani/",
     },
     {
-      icon: <FaYoutube />,
-      text: "youtube.com/@hojat-gazestani",
+      icon: <FaYoutube size={20} />,
+      text: "YouTube",
       href: "https://www.youtube.com/channel/UCmYCnN9mmHEcSvfP6ytbnGA",
     },
   ];
@@ -58,16 +58,16 @@ export const PersonalInfo = () => {
 
         {/* Personal Info Section */}
         <div className="mt-8 bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-          <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+          <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
             Contact Information
           </h2>
-          <ul className="space-y-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {personalInfo.map((item, index) => (
-              <li
+              <div
                 key={index}
-                className="flex items-center text-gray-600 dark:text-gray-300"
+                className="flex items-center p-3 bg-white dark:bg-gray-700 rounded-lg shadow-sm hover:shadow-md transition-shadow"
               >
-                <span className="mr-3 text-gray-500 dark:text-gray-400">
+                <span className="mr-3 text-gray-500 dark:text-gray-300">
                   {item.icon}
                 </span>
                 {item.href ? (
@@ -75,16 +75,18 @@ export const PersonalInfo = () => {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     {item.text}
                   </Link>
                 ) : (
-                  <span>{item.text}</span>
+                  <span className="text-gray-700 dark:text-gray-200">
+                    {item.text}
+                  </span>
                 )}
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
     </div>
