@@ -10,7 +10,7 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 
-export const AboutMe = () => {
+export const PersonalInfo = () => {
   const personalInfo = [
     { icon: <FaMapMarkerAlt />, text: "Tehran, Iran" },
     { icon: <FaPhone />, text: "(+98) 913 863 6926" },
