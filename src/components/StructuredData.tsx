@@ -1,5 +1,3 @@
-"use client";
-
 export const StructuredData = () => {
   const jsonLd = {
     "@context": "https://schema.org",
