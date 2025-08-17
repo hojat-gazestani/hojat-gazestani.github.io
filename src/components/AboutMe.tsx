@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const AboutMe = () => {
   const coreCompetencies = [
-    'Python', 'Linux', 'OpenStack', 'Kubernetes', 
+    'Python', 'Linux', 'OpenStack', 'Kubernetes',
     'GitLab', 'Ansible', 'Zabbix', 'Prometheus',
     'Grafana', 'RabbitMQ', 'Redis'
   ];
@@ -44,7 +44,7 @@ export const AboutMe = () => {
         <div className="space-y-4 text-gray-600 dark:text-gray-300">
           <p>
             My tech journey began in the era of dial-up internet, programming with PASCAL and Delphi.
-            C++ ignited my coding passion under a skilled mentor's guidance.
+            C++ ignited my coding passion under a skilled mentor&apos;s guidance.
           </p>
           <p>
             Discovering Ubuntu and open-source culture marked a career turning point. Initial struggles
@@ -73,7 +73,7 @@ export const AboutMe = () => {
           Outside of Work
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
-          When not working, I enjoy traveling and mountain climbing. Let's connect over coffee!
+          When not working, I enjoy traveling and mountain climbing. Let&apos;s connect over coffee!
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
