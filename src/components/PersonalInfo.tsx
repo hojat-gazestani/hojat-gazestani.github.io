@@ -56,6 +56,20 @@ export const PersonalInfo = () => {
           />
         </div>
 
+        {/* info */}
+        <section itemScope itemType="http://schema.org/Person">
+          <h1 itemProp="name">Hojat Gazestani</h1>
+          <p itemProp="jobTitle">Cloud Engineer | DevOps Specialist</p>
+          <div
+            itemProp="address"
+            itemScope
+            itemType="http://schema.org/PostalAddress"
+          >
+            <span itemProp="addressLocality">Tehran</span>,
+            <span itemProp="addressCountry">Iran</span>
+          </div>
+        </section>
+
         {/* Personal Info Section */}
         <div className="mt-8 bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
           <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">

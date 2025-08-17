@@ -12,52 +12,56 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="flex space-x-6">
-            <Link
-              href="https://github.com/hojat-gazestani"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
-              aria-label="GitHub"
-            >
-              <FaGithub size={20} />
-            </Link>
+          <nav aria-label="Social media links">
+            <div className="flex space-x-6">
+              <Link
+                href="https://github.com/hojat-gazestani"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+                aria-label="GitHub profile"
+              >
+                <FaGithub size={20} />
+              </Link>
 
-            <Link
-              href="https://www.linkedin.com/in/hojat-gazestani/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin size={20} />
-            </Link>
+              <Link
+                href="https://www.linkedin.com/in/hojat-gazestani/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin size={20} />
+              </Link>
 
-            <Link
-              href="https://www.youtube.com/channel/UCmYCnN9mmHEcSvfP6ytbnGA"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
-              aria-label="YouTube"
-            >
-              <FaYoutube size={20} />
-            </Link>
+              <Link
+                href="https://www.youtube.com/channel/UCmYCnN9mmHEcSvfP6ytbnGA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+                aria-label="YouTube"
+              >
+                <FaYoutube size={20} />
+              </Link>
 
-            <Link
-              href="https://medium.com/@hojat_gazestani"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
-              aria-label="Medium"
-            >
-              <FaMedium size={20} />
-            </Link>
-          </div>
+              <Link
+                href="https://medium.com/@hojat_gazestani"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+                aria-label="Medium"
+              >
+                <FaMedium size={20} />
+              </Link>
+            </div>
+          </nav>
         </div>
 
         <div className="mt-4 text-center md:text-left">
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            Built with Next.js, Tailwind CSS, and deployed on GitHub Pages
+            Built with <span className="font-semibold">Next.js</span>,
+            <span className="font-semibold">Tailwind CSS</span>, and deployed on
+            <span className="font-semibold">GitHub Pages</span>
           </p>
         </div>
       </div>
