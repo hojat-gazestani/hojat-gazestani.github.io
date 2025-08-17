@@ -4,6 +4,7 @@ import { PersonalInfo } from "@/components/PersonalInfo";
 import { ProfessionalExperience } from "@/components/ProfessionalExperience";
 import { Education } from "@/components/Education";
 import { Languages } from "@/components/Languages";
+import { OnlineContent } from "@/components/OnlineContent";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <ProfessionalExperience />
         <Education />
         <Languages />
+        <OnlineContent />
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
