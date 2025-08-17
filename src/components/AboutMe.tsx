@@ -15,6 +15,7 @@ export const AboutMe: React.FC = () => {
             marginBottom: '20px'
           }} 
         />
+      </section>
       
       <section>
         <h2>Professional Background</h2>
