@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { AboutMe } from "@/components/AboutMe";
 import { PersonalInfo } from "@/components/PersonalInfo";
+import { ProfessionalExperience } from "@/components/ProfessionalExperience";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <PersonalInfo />
         <AboutMe />
+        <ProfessionalExperience />
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
