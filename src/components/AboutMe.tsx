@@ -1,26 +1,24 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 export const AboutMe = () => {
   const coreCompetencies = [
-    'Python', 'Linux', 'OpenStack', 'Kubernetes',
-    'GitLab', 'Ansible', 'Zabbix', 'Prometheus',
-    'Grafana', 'RabbitMQ', 'Redis'
+    "Python",
+    "Linux",
+    "OpenStack",
+    "Kubernetes",
+    "GitLab",
+    "Ansible",
+    "Zabbix",
+    "Prometheus",
+    "Grafana",
+    "RabbitMQ",
+    "Redis",
   ];
 
   return (
     <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <section className="text-center mb-12">
-        <div className="flex justify-center mb-6">
-          <Image
-            src="/me.png"
-            alt="Hojat Gazestani"
-            width={200}
-            height={200}
-            className="rounded-lg shadow-lg"
-            priority
-          />
-        </div>
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
           About Me
         </h1>
@@ -31,9 +29,10 @@ export const AboutMe = () => {
           Professional Background
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-          With over 10 years of experience in Development and Operations, I specialize as a freelance
-          Kubernetes, AWS, and DevOps engineer. My focus includes implementing CI/CD pipelines,
-          GitOps environments, and managing Kubernetes clusters with deployment solutions.
+          With over 10 years of experience in Development and Operations, I
+          specialize as a freelance Kubernetes, AWS, and DevOps engineer. My
+          focus includes implementing CI/CD pipelines, GitOps environments, and
+          managing Kubernetes clusters with deployment solutions.
         </p>
       </section>
 
@@ -43,17 +42,19 @@ export const AboutMe = () => {
         </h2>
         <div className="space-y-4 text-gray-600 dark:text-gray-300">
           <p>
-            My tech journey began in the era of dial-up internet, programming with PASCAL and Delphi.
-            C++ ignited my coding passion under a skilled mentor&apos;s guidance.
+            My tech journey began in the era of dial-up internet, programming
+            with PASCAL and Delphi. C++ ignited my coding passion under a
+            skilled mentor&apos;s guidance.
           </p>
           <p>
-            Discovering Ubuntu and open-source culture marked a career turning point. Initial struggles
-            with Linux graphics and terminal led me to Cisco systems, where I mastered networking,
-            security, and data center architecture.
+            Discovering Ubuntu and open-source culture marked a career turning
+            point. Initial struggles with Linux graphics and terminal led me to
+            Cisco systems, where I mastered networking, security, and data
+            center architecture.
           </p>
           <p>
-            I expanded into Python automation, cloud security, microservices, and DevOps practices to
-            optimize infrastructure tasks.
+            I expanded into Python automation, cloud security, microservices,
+            and DevOps practices to optimize infrastructure tasks.
           </p>
         </div>
       </section>
@@ -63,8 +64,8 @@ export const AboutMe = () => {
           What I Do Today
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300">
-          Specializing in infrastructure automation, I ensure application stability during frequent
-          development updates.
+          Specializing in infrastructure automation, I ensure application
+          stability during frequent development updates.
         </p>
       </section>
 
@@ -73,7 +74,8 @@ export const AboutMe = () => {
           Outside of Work
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
-          When not working, I enjoy traveling and mountain climbing. Let&apos;s connect over coffee!
+          When not working, I enjoy traveling and mountain climbing. Let&apos;s
+          connect over coffee!
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
