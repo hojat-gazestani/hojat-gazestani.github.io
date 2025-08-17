@@ -12,6 +12,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { SEOHead } from "@/components/SEOHead";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hojat-gazestani.github.io"),
   title: "Hojat Gazestani | Cloud Engineer & DevOps Specialist",
   description:
     "Professional portfolio of Hojat Gazestani, showcasing expertise in Kubernetes, AWS, OpenStack, and DevOps engineering with 10+ years of experience.",
