@@ -2,17 +2,26 @@ import Link from "next/link";
 
 export const AboutMe = () => {
   const skills = [
+    "AWS",
     "Python",
     "Linux",
     "OpenStack",
     "Kubernetes",
+    "HAproxy",
+    "Nginx",
+    "Git",
     "GitLab",
+    "ArgoCD",
     "Ansible",
     "Zabbix",
     "Prometheus",
     "Grafana",
+    "Zabbix",
     "RabbitMQ",
     "Redis",
+    "Pfsense",
+    "Firepower",
+    "Juniper",
   ];
 
   return (
