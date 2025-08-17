@@ -17,10 +17,10 @@ export const Languages = () => {
       </div>
 
       <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
-        <ul className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {languages.map((lang, index) => (
-            <li key={index}>
-              <div className="flex justify-between mb-1">
+            <div key={index} className="space-y-2">
+              <div className="flex justify-between">
                 <span className="text-lg font-medium text-gray-800 dark:text-gray-200">
                   {lang.name}
                 </span>
@@ -34,9 +34,9 @@ export const Languages = () => {
                   style={{ width: `${lang.proficiency}%` }}
                 ></div>
               </div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
