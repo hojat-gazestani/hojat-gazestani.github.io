@@ -3,6 +3,7 @@ import { AboutMe } from "@/components/AboutMe";
 import { PersonalInfo } from "@/components/PersonalInfo";
 import { ProfessionalExperience } from "@/components/ProfessionalExperience";
 import { Education } from "@/components/Education";
+import { Languages } from "@/components/Languages";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <AboutMe />
         <ProfessionalExperience />
         <Education />
+        <Languages />
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
