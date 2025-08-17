@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HelloWorld } from "@/components/HelloWorld";
 
 export default function Home() {
   return (
@@ -22,6 +23,9 @@ export default function Home() {
           </li>
           <li className="tracking-[-.01em]">
             Hojat Save and see your changes instantly.
+          </li>
+          <li className="tracking-[-.01em]">
+            <HelloWorld />
           </li>
         </ol>
 
