@@ -1,6 +1,7 @@
 import { getArticlesByCategory, getAllCategories } from "@/lib/articles";
 import { ArticleList } from "@/components/ArticleList";
 import { notFound } from "next/navigation";
+import { ArticleNav } from "@/components/ArticleNav";
 
 export async function generateStaticParams() {
   const categories = getAllCategories();
@@ -22,6 +23,7 @@ export default async function CategoryPage({
   return (
     <div className="max-w-4xl mx-auto p-8 sm:p-20">
       <h1 className="text-3xl font-bold mb-6">Articles in: {category}</h1>
+      <ArticleNav />
       <ArticleList articles={articles} />
     </div>
   );

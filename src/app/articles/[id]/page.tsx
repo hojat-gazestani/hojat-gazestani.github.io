@@ -3,8 +3,7 @@ import { getArticleData, getAllArticleIds } from "@/lib/articles";
 import { ArticleContent } from "@/components/ArticleContent";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-
-// No need to type PageProps—use Promise-based params directly
+import { ArticleNav } from "@/components/ArticleNav";
 
 export async function generateMetadata({
   params,
@@ -40,6 +39,7 @@ export default async function ArticlePage({
 
   return (
     <div className="max-w-4xl mx-auto p-8 sm:p-20">
+      <ArticleNav />
       <ArticleContent article={article} />
     </div>
   );
