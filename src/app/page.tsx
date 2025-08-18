@@ -27,8 +27,8 @@ export default function Home() {
         <main className="flex-grow p-8 sm:p-20">
           <div className="max-w-4xl mx-auto flex flex-col gap-12">
             <PersonalInfo />
-            <LatestArticles />
             <AboutMe />
+            <LatestArticles />
             <ProfessionalExperience />
             <Education />
             <Languages />
