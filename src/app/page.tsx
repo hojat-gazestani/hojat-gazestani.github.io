@@ -9,6 +9,7 @@ import { ProfessionalCertificates } from "@/components/ProfessionalCertificates"
 import { Footer } from "@/components/Footer";
 import { StructuredData } from "@/components/StructuredData";
 import { metadataConfig } from "@/components/Metadata";
+import { LatestArticles } from "@/components/LatestArticles";
 
 export const metadata: Metadata = metadataConfig;
 
@@ -26,6 +27,7 @@ export default function Home() {
         <main className="flex-grow p-8 sm:p-20">
           <div className="max-w-4xl mx-auto flex flex-col gap-12">
             <PersonalInfo />
+            <LatestArticles />
             <AboutMe />
             <ProfessionalExperience />
             <Education />

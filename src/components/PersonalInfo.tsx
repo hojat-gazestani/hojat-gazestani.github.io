@@ -101,9 +101,6 @@ export const PersonalInfo = () => {
               </div>
             ))}
           </div>
-          <Link href="/articles" className="text-blue-600 hover:underline">
-            Articles
-          </Link>
         </div>
       </section>
     </div>

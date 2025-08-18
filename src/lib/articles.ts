@@ -14,6 +14,7 @@ export interface ArticleMeta {
   tags: string[];
 }
 
+
 export interface ArticleData extends ArticleMeta {
   contentHtml: string;
 }
@@ -47,32 +48,30 @@ export function getSortedArticlesData(): ArticleMeta[] {
 }
 
 export async function getArticleData(id: string): Promise<ArticleData> {
-  const fullPath = path.join(articlesDirectory, `${id}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const fullPath = path.join(articlesDirectory, `${id}.md`);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-  // Use gray-matter to parse the post metadata section
-  const matterResult = matter(fileContents);
+    // Use gray-matter to parse the post metadata section
+    const matterResult = matter(fileContents);
 
-  // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+    // Use remark to convert markdown into HTML string
+    const processedContent = await remark()
+      .use(html)
+      .process(matterResult.content);
+    const contentHtml = processedContent.toString();
 
-  // Combine the data with the id and contentHtml
-  return {
-    id,
-    contentHtml,
-    ...matterResult.data as Omit<ArticleMeta, 'id'>
-  };
+    // Combine the data with the id and contentHtml
+    return {
+      id,
+      contentHtml,
+      ...matterResult.data as Omit<ArticleMeta, 'id'>
+    };
+
 }
 
-export async function getAllArticleIds() {
+export function getAllArticleIds() {
   const fileNames = fs.readdirSync(articlesDirectory);
-
-  return fileNames.map((fileName) => {
-    return {
-      id: fileName.replace(/\.md$/, ''),
-    };
-  });
+  return fileNames.map((fileName) => ({
+    id: fileName.replace(/\.md$/, '')
+  }));
 }

@@ -1,8 +1,18 @@
+// page.tsx
 import { getArticleData, getAllArticleIds } from "@/lib/articles";
 import { ArticleContent } from "@/components/ArticleContent";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  const article = await getArticleData(params.id);
+// No need to type PageProps—use Promise-based params directly
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const article = await getArticleData(id);
   return {
     title: `${article.title} - Hojat Gazestani`,
     description: article.summary,
@@ -11,15 +21,22 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
 export async function generateStaticParams() {
   const articles = await getAllArticleIds();
-  return articles;
+  return articles.map((article) => ({
+    id: article.id,
+  }));
 }
 
 export default async function ArticlePage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const article = await getArticleData(params.id);
+  const { id } = await params;
+  const article = await getArticleData(id);
+
+  if (!article) {
+    notFound();
+  }
 
   return (
     <div className="max-w-4xl mx-auto p-8 sm:p-20">
