@@ -11,10 +11,10 @@ export function ArticleNav({
   category,
 }: ArticleNavProps) {
   return (
-    <div className="flex flex-wrap gap-4 mb-6">
+    <div className="flex flex-row items-center gap-4 mb-6 flex-wrap">
       <Link
         href="/"
-        className="flex items-center text-blue-600 dark:text-blue-400 hover:underline"
+        className="flex items-center text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap"
       >
         <FaHome className="mr-2" />
         Back to Home
@@ -23,7 +23,7 @@ export function ArticleNav({
       {category && (
         <Link
           href={`/articles/category/${category}`}
-          className="flex items-center text-blue-600 dark:text-blue-400 hover:underline"
+          className="flex items-center text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap"
         >
           <FaFolder className="mr-2" />
           Back to {category}
@@ -33,7 +33,7 @@ export function ArticleNav({
       {showArticlesLink && !category && (
         <Link
           href="/articles"
-          className="flex items-center text-blue-600 dark:text-blue-400 hover:underline"
+          className="flex items-center text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap"
         >
           <FaArrowLeft className="mr-2" />
           Back to Articles

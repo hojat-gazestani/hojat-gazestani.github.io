@@ -1,14 +1,14 @@
-import Link from 'next/link';
-import { getAllCategories } from '@/lib/articles';
+import Link from "next/link";
+import { getAllCategories } from "@/lib/articles";
 
 export async function CategoryNav() {
   const categories = getAllCategories();
-  
+
   return (
     <div className="mb-8">
       <h2 className="text-xl font-semibold mb-4">Categories</h2>
       <div className="flex flex-wrap gap-2">
-        {categories.map(category => (
+        {categories.map((category) => (
           <Link
             key={category}
             href={`/articles/category/${category}`}
