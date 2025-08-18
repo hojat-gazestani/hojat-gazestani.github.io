@@ -39,7 +39,7 @@ export default async function ArticlePage({
 
   return (
     <div className="max-w-4xl mx-auto p-8 sm:p-20">
-      <ArticleNav />
+      <ArticleNav category={article.category} />
       <ArticleContent article={article} />
     </div>
   );

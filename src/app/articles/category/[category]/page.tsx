@@ -23,7 +23,7 @@ export default async function CategoryPage({
   return (
     <div className="max-w-4xl mx-auto p-8 sm:p-20">
       <h1 className="text-3xl font-bold mb-6">Articles in: {category}</h1>
-      <ArticleNav />
+      <ArticleNav showArticlesLink={false} />
       <ArticleList articles={articles} />
     </div>
   );
