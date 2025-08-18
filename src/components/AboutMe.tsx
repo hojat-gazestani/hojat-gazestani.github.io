@@ -77,32 +77,6 @@ export const AboutMe = () => {
         </p>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
-          Outside of Work
-        </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
-          When not working, I enjoy traveling and mountain climbing. Let&apos;s
-          connect over coffee!
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            href="mailto:Hojat.Gazestani@gmail.com"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            Hojat.Gazestani@gmail.com
-          </Link>
-          <Link
-            href="https://www.instagram.com/hojat_gazestani"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
-          >
-            @hojat_gazestani
-          </Link>
-        </div>
-      </section>
-
       <section>
         <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
           Skills

@@ -60,14 +60,6 @@ export const PersonalInfo = () => {
         <section itemScope itemType="http://schema.org/Person">
           <h1 itemProp="name">Hojat Gazestani</h1>
           <p itemProp="jobTitle">Cloud Engineer | DevOps Specialist</p>
-          <div
-            itemProp="address"
-            itemScope
-            itemType="http://schema.org/PostalAddress"
-          >
-            <span itemProp="addressLocality">Tehran</span>,
-            <span itemProp="addressCountry">Iran</span>
-          </div>
         </section>
 
         {/* Personal Info Section */}
