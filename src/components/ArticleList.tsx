@@ -1,10 +1,8 @@
 import Link from "next/link";
-import { getSortedArticlesData } from "@/lib/articles";
 import { FaCalendarAlt, FaTags } from "react-icons/fa";
+import type { ArticleMeta } from "@/lib/articles";
 
-export async function ArticleList() {
-  const articles = await getSortedArticlesData();
-
+export function ArticleList({ articles }: { articles: ArticleMeta[] }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {articles.map((article) => (
@@ -35,6 +33,12 @@ export async function ArticleList() {
           <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-2 mb-4">
             {article.summary}
           </p>
+
+          <div className="mt-2 mb-3">
+            <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">
+              {article.category}
+            </span>
+          </div>
 
           {article.tags && article.tags.length > 0 && (
             <div className="flex items-center mt-auto">

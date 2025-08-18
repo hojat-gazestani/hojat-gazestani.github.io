@@ -3,6 +3,7 @@ title: "Kubernetes Best Practices for Production"
 date: "2023-10-15"
 summary: "Learn the essential practices for running Kubernetes in production environments."
 tags: ["Kubernetes", "DevOps", "Production"]
+category: "kubernetes" 
 ---
 
 ## Introduction

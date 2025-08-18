@@ -1,9 +1,9 @@
 ---
 title: "Ceph Cluster Setup Guide"
-category: "Storage"
 date: "2024-10-15"
 readTime: "15 min"
 tags: ["Ceph", "Storage", "OpenSource"]
+category: "ceph"
 ---
 
 # How I Used CephFS to Sync NGINX Configurations Across Multiple Servers

@@ -12,6 +12,7 @@ export interface ArticleMeta {
   date: string;
   summary: string;
   tags: string[];
+  category: string;
 }
 
 
@@ -75,3 +76,14 @@ export function getAllArticleIds() {
     id: fileName.replace(/\.md$/, '')
   }));
 }
+
+export function getAllCategories(): string[] {
+  const articles = getSortedArticlesData();
+  const categories = new Set(articles.map(article => article.category));
+  return Array.from(categories).sort();
+}
+
+export function getArticlesByCategory(category: string): ArticleMeta[] {
+  return getSortedArticlesData().filter(article => article.category === category);
+}
+

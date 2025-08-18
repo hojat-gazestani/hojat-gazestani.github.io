@@ -1,9 +1,9 @@
 ---
 title: "Ceph Cluster Setup Guide"
-category: "Storage"
 date: "2022-10-15"
 readTime: "15 min"
 tags: ["Ceph", "Storage", "OpenSource"]
+category: "ceph"
 ---
 
 # Ceph Cluster Setup Guide

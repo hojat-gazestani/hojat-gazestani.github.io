@@ -1,27 +1,15 @@
+import { getSortedArticlesData } from "@/lib/articles";
 import { ArticleList } from "@/components/ArticleList";
-import Link from "next/link";
-import { FaHome } from "react-icons/fa";
+import { CategoryNav } from "@/components/CategoryNav";
 
-export const metadata = {
-  title: "Articles - Hojat Gazestani",
-  description:
-    "Technical articles about DevOps, Cloud Engineering, and Kubernetes",
-};
+export default async function ArticlesPage() {
+  const articles = await getSortedArticlesData();
 
-export default function ArticlesPage() {
   return (
     <div className="max-w-4xl mx-auto p-8 sm:p-20">
-      <div className="flex justify-between items-start mb-8">
-        <h1 className="text-3xl font-bold">My Articles</h1>
-        <Link
-          href="/"
-          className="flex items-center text-blue-600 dark:text-blue-400 hover:underline"
-        >
-          <FaHome className="mr-2" />
-          Back to Home
-        </Link>
-      </div>
-      <ArticleList />
+      <h1 className="text-3xl font-bold mb-8">My Articles</h1>
+      <CategoryNav />
+      <ArticleList articles={articles} />
     </div>
   );
 }
