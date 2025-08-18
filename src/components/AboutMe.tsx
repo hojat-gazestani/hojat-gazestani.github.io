@@ -2,26 +2,26 @@ import Link from "next/link";
 
 export const AboutMe = () => {
   const skills = [
-    "AWS",
-    "Python",
-    "Linux",
-    "OpenStack",
-    "Kubernetes",
-    "HAproxy",
-    "Nginx",
-    "Git",
-    "GitLab",
-    "ArgoCD",
-    "Ansible",
-    "Zabbix",
-    "Prometheus",
-    "Grafana",
-    "Zabbix",
-    "RabbitMQ",
-    "Redis",
-    "Pfsense",
-    "Firepower",
-    "Juniper",
+    { id: 1, name: "AWS" },
+    { id: 2, name: "Python" },
+    { id: 3, name: "Linux" },
+    { id: 4, name: "OpenStack" },
+    { id: 5, name: "Kubernetes" },
+    { id: 6, name: "HAproxy" },
+    { id: 7, name: "Nginx" },
+    { id: 8, name: "Git" },
+    { id: 9, name: "GitLab" },
+    { id: 10, name: "ArgoCD" },
+    { id: 11, name: "Ansible" },
+    { id: 12, name: "Zabbix" },
+    { id: 13, name: "Prometheus" },
+    { id: 14, name: "Grafana" },
+    { id: 15, name: "Zabbix" },
+    { id: 16, name: "RabbitMQ" },
+    { id: 17, name: "Redis" },
+    { id: 18, name: "Pfsense" },
+    { id: 19, name: "Firepower" },
+    { id: 20, name: "Juniper" },
   ];
 
   return (
@@ -110,10 +110,10 @@ export const AboutMe = () => {
         <div className="flex flex-wrap gap-2">
           {skills.map((skill) => (
             <span
-              key={skill}
+              key={skill.id}
               className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm font-medium"
             >
-              {skill}
+              {skill.name}
             </span>
           ))}
         </div>
