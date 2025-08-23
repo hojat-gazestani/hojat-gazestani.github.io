@@ -13,13 +13,39 @@ export const Hero = () => {
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
           {/* Text Content */}
           <div
             className="flex-1 text-center lg:text-left"
             itemScope
             itemType="http://schema.org/Person"
           >
+            {/* Profile Image */}
+            <div className="flex-1 flex justify-center lg:justify-end order-first lg:order-last">
+              <div className="relative">
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-2xl opacity-30 animate-pulse"></div>
+
+                {/* Profile Image */}
+                <div className="relative">
+                  <Image
+                    src="/me.png"
+                    alt="Hojat Gazestani - DevOps & Cloud Engineer"
+                    width={300}
+                    height={300}
+                    className="rounded-full shadow-2xl border-4 border-white dark:border-gray-800 transform hover:scale-105 transition-transform duration-300"
+                    priority
+                  />
+
+                  {/* Floating Badge */}
+                  <div className="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg border border-gray-200 dark:border-gray-700">
+                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                      <span className="text-white text-sm font-bold">✓</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             {/* Name */}
             <h1
               className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2"
@@ -94,33 +120,6 @@ export const Hero = () => {
                 <FaDownload />
                 <span>Download Resume</span>
               </Link>
-            </div>
-          </div>
-
-          {/* Profile Image */}
-          <div className="flex-1 flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-2xl opacity-30 animate-pulse"></div>
-
-              {/* Profile Image */}
-              <div className="relative">
-                <Image
-                  src="/me.png"
-                  alt="Hojat Gazestani - DevOps & Cloud Engineer"
-                  width={300}
-                  height={300}
-                  className="rounded-full shadow-2xl border-4 border-white dark:border-gray-800 transform hover:scale-105 transition-transform duration-300"
-                  priority
-                />
-
-                {/* Floating Badge */}
-                <div className="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg border border-gray-200 dark:border-gray-700">
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm font-bold">✓</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
