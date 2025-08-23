@@ -174,7 +174,7 @@ export const AboutMe = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-3xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <section className="text-center mb-12">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
           About Me
@@ -182,48 +182,24 @@ export const AboutMe = () => {
       </section>
 
       <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
-          Professional Background
-        </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-          With over 10 years of experience in Development and Operations, I
-          specialize as a freelance Kubernetes, AWS, and DevOps engineer. My
-          focus includes implementing CI/CD pipelines, GitOps environments, and
-          managing Kubernetes clusters with deployment solutions.
-        </p>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
-          My Journey
-        </h2>
-        <div className="space-y-4 text-gray-600 dark:text-gray-300">
-          <p>
-            My tech journey began in the era of dial-up internet, programming
-            with PASCAL and Delphi. C++ ignited my coding passion under a
-            skilled mentor&apos;s guidance.
+        <div className="space-y-6 text-justify">
+          <p className="text-lg text-gray-600 dark:text-gray-300 leading-8 hyphens-auto">
+            I am a seasoned DevOps & Cloud Engineer with over a decade of
+            experience specializing in building resilient, scalable systems. My
+            journey began programming in Pascal and Delphi, followed by C++
+            under mentorship, and evolved through mastering Linux, networking,
+            and security—eventually leading me to infrastructure automation with
+            Python, microservices, and cloud-native DevOps practices.
           </p>
-          <p>
-            Discovering Ubuntu and open-source culture marked a career turning
-            point. Initial struggles with Linux graphics and terminal led me to
-            Cisco systems, where I mastered networking, security, and data
-            center architecture.
-          </p>
-          <p>
-            I expanded into Python automation, cloud security, microservices,
-            and DevOps practices to optimize infrastructure tasks.
+          <p className="text-lg text-gray-600 dark:text-gray-300 leading-8 hyphens-auto">
+            Today, as a freelance Kubernetes, AWS, and DevOps engineer, I
+            architect and manage Kubernetes clusters, implement CI/CD and GitOps
+            pipelines, and automate infrastructure across platforms like
+            OpenStack, AWS, Docker, and more. I&apos;m passionate about delivering
+            stability without sacrificing velocity—empowering development teams
+            to iterate quickly and confidently.
           </p>
         </div>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
-          What I Do Today
-        </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300">
-          Specializing in infrastructure automation, I ensure application
-          stability during frequent development updates.
-        </p>
       </section>
 
       <section>
