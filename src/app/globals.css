@@ -85,3 +85,12 @@ body {
 .prose th {
   @apply bg-gray-100 dark:bg-gray-800 font-bold;
 }
+
+/* Custom animation delays for hero section */
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}

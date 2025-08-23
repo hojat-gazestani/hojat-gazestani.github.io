@@ -19,6 +19,7 @@ import {
   SiRabbitmq,
   SiRedis,
   SiPfsense,
+  SiDjango,
 } from "react-icons/si";
 
 export const AboutMe = () => {
@@ -76,6 +77,11 @@ export const AboutMe = () => {
     {
       name: "Web & Application",
       skills: [
+        {
+          name: "Django",
+          level: "Expert",
+          icon: <SiDjango className="text-green-600" />,
+        },
         {
           name: "Nginx",
           level: "Expert",
@@ -194,10 +200,11 @@ export const AboutMe = () => {
           <p className="text-lg text-gray-600 dark:text-gray-300 leading-8 hyphens-auto">
             Today, as a freelance Kubernetes, AWS, and DevOps engineer, I
             architect and manage Kubernetes clusters, implement CI/CD and GitOps
-            pipelines, and automate infrastructure across platforms like
-            OpenStack, AWS, Docker, and more. I&apos;m passionate about delivering
-            stability without sacrificing velocity—empowering development teams
-            to iterate quickly and confidently.
+            pipelines, and develop web applications using Python and Django. I
+            automate infrastructure across platforms like OpenStack, AWS,
+            Docker, and more. I&apos;m passionate about delivering stability
+            without sacrificing velocity—empowering development teams to iterate
+            quickly and confidently.
           </p>
         </div>
       </section>

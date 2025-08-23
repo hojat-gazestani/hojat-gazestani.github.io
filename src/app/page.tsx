@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Hero } from "@/components/Hero";
 import { AboutMe } from "@/components/AboutMe";
 import { PersonalInfo } from "@/components/PersonalInfo";
 import { ProfessionalExperience } from "@/components/ProfessionalExperience";
@@ -26,6 +27,7 @@ export default function Home() {
       <div className="font-sans min-h-screen flex flex-col">
         <main className="flex-grow p-8 sm:p-20">
           <div className="max-w-4xl mx-auto flex flex-col gap-12">
+            <Hero />
             <PersonalInfo />
             <AboutMe />
             <LatestArticles />

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import {
   FaGithub,
@@ -42,26 +41,8 @@ export const PersonalInfo = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div id="contact" className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <section className="text-center mb-12">
-        {/* My picture */}
-        <div className="flex justify-center mb-6">
-          <Image
-            src="/me.png"
-            alt="Hojat Gazestani"
-            width={200}
-            height={200}
-            className="rounded-lg shadow-lg"
-            priority
-          />
-        </div>
-
-        {/* info */}
-        <section itemScope itemType="http://schema.org/Person">
-          <h1 itemProp="name">Hojat Gazestani</h1>
-          <p itemProp="jobTitle">Cloud Engineer | DevOps Specialist</p>
-        </section>
-
         {/* Personal Info Section */}
         <div className="mt-8 bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
           <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
