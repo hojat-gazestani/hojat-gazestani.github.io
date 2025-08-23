@@ -12,6 +12,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
   const article = await getArticleData(id);
+
+  if (!article) {
+    return {
+      title: "Article Not Found - Hojat Gazestani",
+      description: "The requested article could not be found.",
+    };
+  }
+
   return {
     title: `${article.title} - Hojat Gazestani`,
     description: article.summary,

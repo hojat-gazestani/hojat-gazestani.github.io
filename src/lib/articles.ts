@@ -13,8 +13,8 @@ export interface ArticleMeta {
   summary: string;
   tags: string[];
   category: string;
+  readTime?: string;
 }
-
 
 export interface ArticleData extends ArticleMeta {
   contentHtml: string;
@@ -24,23 +24,25 @@ export function getSortedArticlesData(): ArticleMeta[] {
   // Get file names under /articles
   const fileNames = fs.readdirSync(articlesDirectory);
   
-  const allArticlesData = fileNames.map((fileName) => {
-    // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, '');
+  const allArticlesData = fileNames
+    .filter(fileName => fileName.endsWith('.md'))
+    .map((fileName) => {
+      // Remove ".md" from file name to get id
+      const id = fileName.replace(/\.md$/, '');
 
-    // Read markdown file as string
-    const fullPath = path.join(articlesDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+      // Read markdown file as string
+      const fullPath = path.join(articlesDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
+      // Use gray-matter to parse the post metadata section
+      const matterResult = matter(fileContents);
 
-    // Combine the data with the id
-    return {
-      id,
-      ...matterResult.data as Omit<ArticleMeta, 'id'>
-    };
-  });
+      // Combine the data with the id
+      return {
+        id,
+        ...matterResult.data as Omit<ArticleMeta, 'id'>
+      };
+    });
 
   // Sort articles by date
   return allArticlesData.sort((a, b) => {
@@ -48,8 +50,15 @@ export function getSortedArticlesData(): ArticleMeta[] {
   });
 }
 
-export async function getArticleData(id: string): Promise<ArticleData> {
+export async function getArticleData(id: string): Promise<ArticleData | null> {
+  try {
     const fullPath = path.join(articlesDirectory, `${id}.md`);
+    
+    // Check if file exists
+    if (!fs.existsSync(fullPath)) {
+      return null;
+    }
+    
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
     // Use gray-matter to parse the post metadata section
@@ -67,14 +76,19 @@ export async function getArticleData(id: string): Promise<ArticleData> {
       contentHtml,
       ...matterResult.data as Omit<ArticleMeta, 'id'>
     };
-
+  } catch (error) {
+    console.error(`Error processing article ${id}:`, error);
+    return null;
+  }
 }
 
 export function getAllArticleIds() {
   const fileNames = fs.readdirSync(articlesDirectory);
-  return fileNames.map((fileName) => ({
-    id: fileName.replace(/\.md$/, '')
-  }));
+  return fileNames
+    .filter(fileName => fileName.endsWith('.md'))
+    .map((fileName) => ({
+      id: fileName.replace(/\.md$/, '')
+    }));
 }
 
 export function getAllCategories(): string[] {
