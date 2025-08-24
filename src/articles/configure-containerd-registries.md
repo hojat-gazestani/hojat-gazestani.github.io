@@ -16,6 +16,14 @@ When working with private container registries, especially those using HTTP or s
 
 
 
+[![Containerd]](https://youtu.be/oOnMJL9erjQ)
+
+[![containerd](https://youtu.be/oOnMJL9erjQ)]
+
+
+
+
+
 
 
 ## Prerequisites
