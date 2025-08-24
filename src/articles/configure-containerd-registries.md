@@ -10,7 +10,9 @@ category: "kubernetes"
 
 When working with private container registries, especially those using HTTP or self-signed certificates, configuring your container runtime is a critical step. This guide provides two practical methods to configure Containerd to pull images from both **insecure HTTP registries** and **authenticated private registries**.
 
-![Containerd-gitlab](/Users/hojat/Documents/github/mine/hojat-gazestani.github.io/public/ProjectPic/Containerd-gitlab.png)
+![Containerd-gitlab](https://github.com/hojat-gazestani/hojat-gazestani.github.io/blob/main/public/ProjectPic/Containerd-gitlab.png)
+
+
 
 
 
