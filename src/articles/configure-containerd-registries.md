@@ -1,167 +1,138 @@
 ---
-title: "Configuring Containerd to Pull Images from HTTP and Private Registries"
+title: "How to Configure Containerd for HTTP and Private Registries (With Examples)"
 date: "2025-08-24"
-summary: "A practical guide to configuring Containerd's CRI plugin to pull container images from both insecure HTTP registries and authenticated private registries"
-tags: ["containerd", "container-registry", "kubernetes", "devops", "docker"]
+summary: "Step-by-step guide to configure Containerd's CRI plugin to securely pull container images from insecure HTTP and authenticated private registries like GitLab. Includes troubleshooting tips."
+tags: ["containerd", "container-registry", "kubernetes", "devops", "docker", "gitlab", "cri", "container-runtime", "insecure-registry"]
 category: "kubernetes"
 ---
 
+# Configuring Containerd to Pull Images from HTTP and Private Registries
 
+When working with private container registries, especially those using HTTP or self-signed certificates, configuring your container runtime is a critical step. This guide provides two practical methods to configure Containerd to pull images from both **insecure HTTP registries** and **authenticated private registries**.
 
-# Configure containerd to pull images from  HTTP registries
+## Prerequisites
 
+Before you begin, ensure you have:
+*   A running Containerd service.
+*   Credentials for your private registry (e.g., a GitLab Deploy Token or user account).
+*   Network access to your registry server.
 
-
-![scenario](https://github.com/hojat-gazestani/hojat-gazestani.github.io/blob/main/public/ProjectPic/Containerd-gitlab.png)
-
-
-
-
-
-I've also created a YouTube video tutorial for this setup:  
-
-[![containerd-gitlab]]()
-
-
-
-You need to have a user in you Gitlab server to push and pull images.
-
-In you Gitlab `Admin area` create a new user `test-user` with `password` to use for containerd
-
-
-
-!!! For local registry it is required to resolve the name
-
+**Important:** For a local registry, ensure its hostname is resolvable. Add it to your `/etc/hosts` file if necessary:
 ```bash
-grep git /etc/hosts
-172.27.103.113   git.zaraamad.ir registry.zaraamad.ir
+echo "172.27.103.113   git.zaraamad.ir registry.zaraamad.ir" | sudo tee -a /etc/hosts
 ```
 
 
 
-Test the registry before configuring the configuration 
+## Method 1: The Modular Approach (Recommended)
 
-```bash
- sudo ctr image list
-REF TYPE DIGEST SIZE PLATFORMS LABELS
+This method uses the `/etc/containerd/certs.d/` directory, which is more organized and easier to manage for multiple registries. Each registry gets its own directory and configuration file.
 
-sudo ctr --debug images pull \
-	--plain-http \
-  --user test-user1:yF6zUG976yRwO8Loc2Z+p3u \
-  registry.zaraamad.ir:5005/zaraavand/rahtal-be:latest
-  
-sudo ctr image list
-REF                                                  TYPE                                                 DIGEST                                                                  SIZE      PLATFORMS   LABELS
-registry.zaraamad.ir:5005/zaraavand/rahtal-be:latest application/vnd.docker.distribution.manifest.v2+json sha256:3319e688ab43b14adc58c45ca38a30350628fac33db900a475e1f6c7612d0858 571.4 MiB linux/amd64 -
-```
+### Step-by-Step Guide
 
-
-
-### Understanding the Configuration Structure
-
-Containerd offers two primary methods for configuring registry access:
-
-1. **Config Directory (`/etc/containerd/certs.d/`)**: A more modular approach, where each registry has its own configuration file in a structured directory.
-2. **Single Configuration File** (`/etc/containerd/config.toml`)
-
-
-
-### Method 1: The Modular Approach (Using `/etc/containerd/certs.d/`) 
-
-generate a default configuration
+1. **Generate a default configuration** (if you don't have one):
 
 ```bash
 sudo containerd config default | sudo tee /etc/containerd/config.toml > /dev/null
 ```
 
+2. **Create a directory structure for your registry**.
+   The directory name must match the registry's host and port precisely.
 
+```bash
+sudo mkdir -p /etc/containerd/certs.d/registry.zaraamad.ir:5005
+```
 
-Now, create `/etc/containerd/certs.d/registry.zaraamad.ir:5005/hosts.toml` and add
+3. **Create the `hosts.toml` configuration file** inside the new directory.
 
 ```bash
 sudo vim /etc/containerd/certs.d/registry.zaraamad.ir:5005/hosts.toml
+```
+
+4. **Add the following configuration**, adjusting the credentials and URL for your environment:
+
+```bash
 server = "http://registry.zaraamad.ir:5005"
 
 [host."http://registry.zaraamad.ir:5005"]
-  capabilities = ["pull", "resolve"]
-  skip_verify = true
+  capabilities = ["pull", "resolve", "push"] # Add "push" if needed
+  skip_verify = true # Bypasses TLS verification for HTTP/insecure HTTPS
 
   [host."http://registry.zaraamad.ir:5005".auth]
     username = "test-user1"
     password = "yF6zUG976yRwO8Loc2Z+p3u"
 ```
 
+### Key Configuration Directives
 
+- `server`: The base URL for the registry.
+- `capabilities`: Defines what operations the client can perform (`pull`, `resolve`, `push`).
+- `skip_verify = true`: Crucial for registries using HTTP or HTTPS with self-signed certificates.
+- `[auth]`: Section for providing username/password credentials.
 
-### Applying the Configuration and Testing
+## Method 2: The Single File Approach
 
-```bash
-sudo systemctl restart containerd
-sudo systemctl status containerd
-```
+You can also configure everything directly in the main `config.toml` file. This can be useful for centralized management but can become cluttered.
 
-
-
-### Method 2: The Single File Approach (Using `config.toml`)
-
-generate a default configuration
+1. **Generate or edit the main configuration file**:
 
 ```bash
-sudo containerd config default | sudo tee /etc/containerd/config.toml > /dev/null
+sudo containerd config default | sudo tee /etc/containerd/config.toml >/dev/null
+sudo vim /etc/containerd/config.toml
 ```
 
-
-
-Now, edit `/etc/containerd/config.toml` and find the`[plugins."io.containerd.grpc.v1.cri".registry]` section.
-
-
+2. **Locate the `[plugins."io.containerd.grpc.v1.cri".registry]` section** and modify it to match the structure below:
 
 ```bash
 version = 2
 
 [plugins."io.containerd.grpc.v1.cri".registry]
 
+  # Define registry mirrors (for insecure HTTP)
   [plugins."io.containerd.grpc.v1.cri".registry.mirrors]
-    [plugins."io.containerd.grpc.v1.cri".registry.mirrors."my-registry.local:5000"]
-      endpoint = ["http://my-registry.local:5000"] # Define mirror endpoint as HTTP
-    [plugins."io.containerd.grpc.v1.cri".registry.mirrors."private.registry.com"]
-      endpoint = ["https://private.registry.com"]
+    [plugins."io.containerd.grpc.v1.cri".registry.mirrors."registry.zaraamad.ir:5005"]
+      endpoint = ["http://registry.zaraamad.ir:5005"]
 
+  # Define registry configs (auth and TLS)
   [plugins."io.containerd.grpc.v1.cri".registry.configs]
-
-    [plugins."io.containerd.grpc.v1.cri".registry.configs."my-registry.local:5000".tls]
-      insecure_skip_verify = true 
-
-    [plugins."io.containerd.grpc.v1.cri".registry.configs."private.registry.com".auth]
-      username = "myusername"
-      password = "mysecretpassword"
-
+    [plugins."io.containerd.grpc.v1.cri".registry.configs."registry.zaraamad.ir:5005".tls]
+      insecure_skip_verify = true
+    [plugins."io.containerd.grpc.v1.cri".registry.configs."registry.zaraamad.ir:5005".auth]
+      username = "test-user1"
+      password = "yF6zUG976yRwO8Loc2Z+p3u"
 ```
 
 
 
-### Applying the Configuration and Testing
+## Applying the Configuration and Testing
+
+After configuring either method, restart Containerd to apply the changes.
 
 ```bash
 sudo systemctl restart containerd
-sudo systemctl status containerd
+sudo systemctl status containerd # Verify it restarted successfully
 ```
 
 
 
-Test pulling an image from your HTTP registry:
-
-
+**Test the configuration** by pulling an image using `ctr`:
 
 ```bash
-sudo ctr image pull my-registry.local:5000/nginx:alpine
+sudo ctr images pull registry.zaraamad.ir:5005/zaraavand/rahtal-be:latest
 ```
 
+List the images to confirm it was pulled successfully:
 
+```bash
+sudo ctr image list
+```
 
-### Tshout
+## Troubleshooting and Debugging
 
-In your `config.toml`, add:
+If you encounter issues, enabling debug logging is the best first step.
+
+1. **Enable Debug Logging**:
+   Edit `/etc/containerd/config.toml` and add/ensure the following section exists:
 
 ```bash
 [debug]
@@ -170,13 +141,27 @@ In your `config.toml`, add:
 
 
 
-Then restart Containerd and check the logs:
+Restart Containerd (`sudo systemctl restart containerd`) and then check the logs in real-time:
+
+
 
 ```bash
 sudo journalctl -u containerd -f
 ```
 
+1. The debug logs will show detailed information about the image pull process, including authentication attempts and any connection errors.
+2. **Test Without Configuration**:
+   You can test a pull with explicit flags using the `ctr` command, which is useful for validating credentials before writing the config file.
+
+```bash
+sudo ctr --debug images pull \
+  --plain-http \
+  --user test-user1:yF6zUG976yRwO8Loc2Z+p3u \
+  registry.zaraamad.ir:5005/zaraavand/rahtal-be:latest
+```
 
 
-## 
 
+## Conclusion
+
+Configuring Containerd for private and insecure registries is straightforward once you understand the two primary methods. For most use cases, **the modular `/etc/containerd/certs.d/` approach (Method 1)** is preferred for its cleanliness and scalability across multiple registries. Remember to use `skip_verify` or `insecure_skip_verify` for HTTP registries and always secure your credentials properly.
