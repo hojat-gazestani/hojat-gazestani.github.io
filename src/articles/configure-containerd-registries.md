@@ -2,7 +2,7 @@
 title: "How to Configure Containerd for HTTP and Private Registries (With Examples)"
 date: "2025-08-24"
 summary: "Step-by-step guide to configure Containerd's CRI plugin to securely pull container images from insecure HTTP and authenticated private registries like GitLab. Includes troubleshooting tips."
-tags: ["containerd", "container-registry", "kubernetes", "devops", "docker", "gitlab", "cri", "container-runtime", "insecure-registry"]
+tags: ["containerd", "container-registry", "kubernetes", "devops", "docker", "gitlab", "cri", "container-runtime", "insecure-registry", "Unauthorized", "401"]
 category: "kubernetes"
 ---
 
@@ -44,6 +44,66 @@ echo "172.27.103.113   git.zaraamad.ir registry.zaraamad.ir" | sudo tee -a /etc/
 This method uses the `/etc/containerd/certs.d/` directory, which is more organized and easier to manage for multiple registries. Each registry gets its own directory and configuration file.
 
 ### Step-by-Step Guide
+
+To resolve the following error you can create a secret:
+
+```bash
+Failed to pull image "registry.name.ir:5005/project-name/image:latest": failed to pull and unpack image "registry.name.ir:5005/project-name/image:latest": failed to resolve reference "registry.name.ir:5005/project-name/image:latest": failed to authorize: failed to fetch oauth token: unexpected status from GET request to http://git.name.ir/jwt/auth?scope=repository%3Aproject-name%2Fimage%3Apull&service=container_registry: 401 Unauthorized
+```
+
+
+
+#### secret creation
+
+Create base64
+
+```bash
+echo -n '{"auths":{"registry.zaraamad.ir:5005":{"username":"test-user1","password":"yF6zUG976yRwO8Loc2Z+p3u","auth":"'$(echo -n test-user1:yF6zUG976yRwO8Loc2Z+p3u | base64)'"}}}' | base64 -w 0
+```
+
+
+
+Create secret manifest
+
+
+
+```yaml
+vim test-be-regcred.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: regcred
+  namespace: test
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: eyJhdXRocyI6eyJyZWdpc3RyeS56YXJhYW1hZC5pcjo1MDA1Ijp7InVzZXJuYW1lIjoidGVzdC11c2VyMSIsInBhc3N3b3JkIjoieUY2elVHOTc2eVJ3TzhMb2MyWitwM3UiLCJhdXRoIjoiZEdWemRDMTFjMlZ5TVRwNVJqWjZWVWM1TnpaNVVuZFBPRXh2WXpKYUszQXpkUT09In19fQ==
+```
+
+
+
+Create the secret 
+
+```bash
+kubectl create -f test-be-regcred.yaml
+```
+
+
+
+
+
+#### CRI configuration
+
+
+
+To resolve the following error you have configure the CRI 
+
+```bash
+Failed to pull image "registry.name.ir:5005/project-name/image:latest": failed to pull and unpack image "registry.name.ir:5005/project-name/image:latest": failed to resolve reference "registry.name.ir:5005/project-name/image:latest": failed to do request: Head "https://registry.name.ir:5005/v2/project-name/image/manifests/latest": http: server gave HTTP response to HTTPS client
+```
+
+
+
+
 
 1. **Generate a default configuration** (if you don't have one):
 
