@@ -133,9 +133,6 @@ server = "http://registry.zaraamad.ir:5005"
   capabilities = ["pull", "resolve", "push"] # Add "push" if needed
   skip_verify = true # Bypasses TLS verification for HTTP/insecure HTTPS
 
-  [host."http://registry.zaraamad.ir:5005".auth]
-    username = "test-user1"
-    password = "yF6zUG976yRwO8Loc2Z+p3u"
 ```
 
 ### Key Configuration Directives
