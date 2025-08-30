@@ -6,20 +6,6 @@ tags: ["linux", "boot-process", "bios", "uefi", "grub", "kernel", "sysadmin", "d
 category: "Linux-Core"
 ---
 
----
-title: "The Linux Boot Process Explained: From BIOS/UEFI to Kernel"
-date: "2024-08-30"
-summary: "A detailed guide to understanding the Linux boot sequence, covering the roles of BIOS, UEFI, bootloaders like GRUB, and the final handoff to the kernel."
-tags: ["linux", "boot-process", "bios", "uefi", "grub", "kernel", "sysadmin", "devops"]
-category: "Linux-Core"
----
-
-
-
-
-
-
-
 
 
 # The Linux Boot Process: A Deep Dive
@@ -27,7 +13,7 @@ category: "Linux-Core"
 This process can be broadly broken down into four key stages
 
 
-![main-stage](/public/ProjectPic/main-stage.png)
+![main-stage](public/ProjectPic/main-stage.png)
 
 
 
@@ -42,7 +28,7 @@ This process can be broadly broken down into four key stages
 
 The CPU reads the **boot code** from the motherboard's ROM, which launches either a **BIOS** or a **UEFI** environment.
 
-![CPU reading from ROM](/public/ProjectPic/cpu-rom.png)
+![CPU reading from ROM](public/ProjectPic/cpu-rom.png)
 
 
 
@@ -59,7 +45,7 @@ fully boot
 
 The following pictuve shows `system firmware` options are `BIOS` and `UEFI`
 
-![bootcode-firmware](/public/ProjectPic/bootcode-firmware.png)
+![bootcode-firmware](public/ProjectPic/bootcode-firmware.png)
 
 
 
@@ -73,7 +59,7 @@ The following  diagram shows `BOIS` need **MBR** to have access to **Boot loader
 
 
 
-![Bios-vs-UEFI](/public/ProjectPic/Bios-vs-UEFI.png)
+![Bios-vs-UEFI](public/ProjectPic/Bios-vs-UEFI.png)
 
 
 
@@ -83,7 +69,7 @@ The following  diagram shows `BOIS` need **MBR** to have access to **Boot loader
 
 BIOS boot process has a significant limitation: it can only read the first 440 bytes (Master Boot Record - MBR) of a boot disk to find the next stage, the **boot loader**.  while `UEFI` can have read loader partition (ESP) consulting `GPT`
 
-![BIOS Boot Process](/public/ProjectPic/BIOS.png)
+![BIOS Boot Process](public/ProjectPic/BIOS.png)
 
 
 
@@ -95,7 +81,7 @@ UEFI (Unified Extensible Firmware Interface) is essentially a lightweight operat
 *   **ESP:** It reads from a special partition called the **EFI System Partition (ESP)**, which is formatted with a FAT32 filesystem.
 *   **Direct Loading:** UEFI can directly read files from the ESP and execute them. This means the bootloader (e.g., `grubx64.efi`) is just a file in a directory, eliminating the need for the complex loading stages of BIOS.
 
-![UEFI Boot Process](/public/ProjectPic/UEFI.png)
+![UEFI Boot Process](public/ProjectPic/UEFI.png)
 
 The UEFI boot process is simpler:
 1.  Firmware consults the GPT to identify the ESP.
