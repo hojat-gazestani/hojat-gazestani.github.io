@@ -1,9 +1,9 @@
 ---
-title: "How to Configure Containerd for HTTP and Private Registries (With Examples)"
-date: "2025-08-24"
-summary: "Step-by-step guide to configure Containerd's CRI plugin to securely pull container images from insecure HTTP and authenticated private registries like GitLab. Includes troubleshooting tips."
-tags: ["containerd", "container-registry", "kubernetes", "devops", "docker", "gitlab", "cri", "container-runtime", "insecure-registry", "Unauthorized", "401"]
-category: "kubernetes"
+title: "The Linux Boot Process Explained: From BIOS/UEFI to Kernel"
+date: "2024-08-30"
+summary: "A detailed guide to understanding the Linux boot sequence, covering the roles of BIOS, UEFI, bootloaders like GRUB, and the final handoff to the kernel."
+tags: ["linux", "boot-process", "bios", "uefi", "grub", "kernel", "sysadmin", "devops"]
+category: "Linux-Core"
 ---
 
 ---
