@@ -105,28 +105,6 @@ sudo systemctl mask nginx.service    # Block service
 sudo systemctl unmask nginx.service  # Remove block
 ```
 
-
-
-
-
-Commonly used systemctl subcommands
-
-| Subcommand                     | Fucntion                                              |
-| ------------------------------ | ----------------------------------------------------- |
-| **list-Unit-fils** [*pattern*] | Shows installed units; Optionally matching pattern    |
-| **enable** *unit*              | Enables unit to activate at boot                      |
-| **disable** *unit*             | Prevents unit from activating at boot                 |
-| **isolate** *target*           | Changes operating mode to target                      |
-| **start** *unit*               | Activates unit immediately                            |
-| **stop** *unit*                | Deactivates unit immediately                          |
-| **restart** *unit*             | Restarts (or starts, if not running) unit immediately |
-| **status** *unit*              | Shows unit’s status and recent log entries            |
-| **kill** *pattern*             | Sends a signal to units matching pattern              |
-| **reboot**                     | Reboots the computer                                  |
-| **daemon-reload**              | Reloads unit !les and systemd con!guration            |
-
-
-
 ![systemd-subcommands](/ProjectPic/systemd-subcommands.png)
 
 ### System State Inspection
