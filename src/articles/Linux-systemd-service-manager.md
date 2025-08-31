@@ -127,7 +127,7 @@ Commonly used systemctl subcommands
 
 
 
-
+![systemd-subcommands](/ProjectPic/systemd-subcommands.png)
 
 ### System State Inspection
 
@@ -149,9 +149,9 @@ sudo systemctl isolate graphical.target       # Change to graphical mode
 telinit 4                            			 		# Traditional syntax (equivalent)
 ```
 
+![systemd-targets](/ProjectPic/systemd-targets.png)
 
 
-[https:///ProjectPic/systemd-targets.png](https://projectpic/systemd-targets.png)
 
 ### Static Units
 
