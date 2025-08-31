@@ -10,6 +10,12 @@ category: "Linux-Core"
 
 ## Introduction to System Management
 
+
+
+![systemd-init](/ProjectPic/systemd-init.png)
+
+
+
 ### Kernel Processes vs. User Space Daemons
 Linux systems manage two types of processes:
 
