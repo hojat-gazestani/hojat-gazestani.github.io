@@ -263,11 +263,8 @@ By controlling how processes interact with the system's resources, Linux maintai
 
 ```
 ---
-### 🔗 Read Next: Dive Deeper into the Linux Kernel
+### 🔗 Read Next: [Dive Deeper into the Linux Kernel](https://hojat-gazestani.github.io/articles/Linux-Virtual-File-System)
 
-Now that you understand how UIDs control process permissions, learn about the system that manages all your files:
-[**What is the Linux VFS? Understanding the Virtual File System**]({{< ref "Linux-Virtual-File-System.md" >}})
-<!-- Use 'ref' for Hugo or just a direct link /articles/Linux-Virtual-File-System/ for Jekyll -->
 ```
 
 
