@@ -57,22 +57,13 @@ These Identities are stored in:
   + What system calls it can make.
   + What capabilities it has.
 
- Breakdown of UIDs
-
-| UID field      | Meaning                                                      |
-| -------------- | ------------------------------------------------------------ |
-| Read UID       | Who started the process                                      |
-| Effective UID  | Used for permission checked by the **kernel/VFS**            |
-| Saved UID      | Stored UID for temporarily dropping and regaining privileges |
-| Filesystem UID | Used by VFS file system access (may differ with `setfsuid()`in some cases🧠) |
-
 
 
 
 
  Breakdown of UIDs
 
-![UIDs](/Users/hojat/Documents/github/mine/hojat-gazestani.github.io/public/ProjectPic/UIDs.png)
+![UIDs](/ProjectPic/UIDs.png)
 
 
 
@@ -256,7 +247,7 @@ Upload successful: /var/www/html/upload/Juli - 2025.pdf
 + The `s` in `-rws` means it's a `setuid` binary.
 + When a normal user (UID: 1000) runs it:
 
-![passwd-uids](/Users/hojat/Documents/github/mine/hojat-gazestani.github.io/public/ProjectPic/passwd-uids.png)
+![passwd-uids](/ProjectPic/passwd-uids.png)
 
 ## Conclusion
 
