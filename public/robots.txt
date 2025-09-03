@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hojat-gazestani.github.io/sitemap.xml
