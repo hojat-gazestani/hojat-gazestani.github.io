@@ -1,16 +1,72 @@
-<!-- public/sitemap.xml -->
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://hojat-gazestani.github.io/</loc>
-    <lastmod>2024-09-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <!-- Add URLs for each article -->
-  <url>
-    <loc>https://hojat-gazestani.github.io/articles/cephfs-nginx</loc>
-    <lastmod>2024-08-25</lastmod>
-  </url>
-  <!-- Add other articles similarly -->
+<urlset>
+<url>
+<loc>https://hojat-gazestani.github.io/</loc>
+<lastmod>2025-09-03T07:55:52+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://hojat-gazestani.github.io/articles</loc>
+<lastmod>2025-09-03T07:55:52+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://hojat-gazestani.github.io/resume.pdf</loc>
+<lastmod>2025-09-03T07:55:52+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://hojat-gazestani.github.io/articles/Linux-Standard-UNIX-Access-Control</loc>
+<lastmod>2025-09-03T07:55:52+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://hojat-gazestani.github.io/articles/Linux-Virtual-File-System</loc>
+<lastmod>2025-09-03T07:55:52+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://hojat-gazestani.github.io/articles/Linux-systemd-service-manager</loc>
+<lastmod>2025-09-03T07:55:52+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://hojat-gazestani.github.io/articles/category/Linux-Core</loc>
+<lastmod>2025-09-03T07:55:52+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://hojat-gazestani.github.io/articles/category/ceph</loc>
+<lastmod>2025-09-03T07:55:52+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://hojat-gazestani.github.io/articles/category/cloud-computing</loc>
+<lastmod>2025-09-03T07:55:52+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://hojat-gazestani.github.io/articles/category/kubernetes</loc>
+<lastmod>2025-09-03T07:55:52+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://hojat-gazestani.github.io/articles/S3-Bandwidth-Benchmarking-with-Boto3</loc>
+<lastmod>2025-09-03T07:55:52+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://hojat-gazestani.github.io/articles/configure-containerd-registries</loc>
+<lastmod>2025-09-03T07:55:52+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://hojat-gazestani.github.io/articles/cephfs-nginx</loc>
+<lastmod>2025-09-03T07:55:52+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://hojat-gazestani.github.io/articles/Linux-boot-process</loc>
+<lastmod>2025-09-03T07:55:52+00:00</lastmod>
+<priority>0.64</priority>
+</url>
 </urlset>
