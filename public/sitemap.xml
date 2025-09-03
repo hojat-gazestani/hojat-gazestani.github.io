@@ -4,79 +4,65 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://hojat-gazestani.github.io/</loc>
-  <lastmod>2025-09-03T08:21:57+00:00</lastmod>
+  <lastmod>2024-09-03</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://hojat-gazestani.github.io/articles</loc>
-  <lastmod>2025-09-03T08:21:57+00:00</lastmod>
+  <lastmod>2024-09-03</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/articles/cephfs-nginx</loc>
+  <lastmod>2024-08-25</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/articles/configure-containerd-registries</loc>
+  <lastmod>2024-08-25</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/articles/linux-boot-process</loc>
+  <lastmod>2024-08-30</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/articles/linux-standard-unix-access-control</loc>
+  <lastmod>2024-09-02</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/articles/linux-systemd-service-manager</loc>
+  <lastmod>2024-08-31</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/articles/linux-virtual-file-system</loc>
+  <lastmod>2024-09-02</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/articles/s3-bandwidth-benchmarking-with-boto3</loc>
+  <lastmod>2024-08-25</lastmod>
+  <changefreq>yearly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://hojat-gazestani.github.io/resume.pdf</loc>
-  <lastmod>2025-09-03T08:21:57+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-08-23</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.50</priority>
 </url>
-<url>
-  <loc>https://hojat-gazestani.github.io/articles/Linux-Standard-UNIX-Access-Control</loc>
-  <lastmod>2025-09-03T08:21:57+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://hojat-gazestani.github.io/articles/Linux-Virtual-File-System</loc>
-  <lastmod>2025-09-03T08:21:57+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://hojat-gazestani.github.io/articles/Linux-systemd-service-manager</loc>
-  <lastmod>2025-09-03T08:21:57+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://hojat-gazestani.github.io/articles/category/Linux-Core</loc>
-  <lastmod>2025-09-03T08:21:57+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://hojat-gazestani.github.io/articles/category/ceph</loc>
-  <lastmod>2025-09-03T08:21:57+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://hojat-gazestani.github.io/articles/category/cloud-computing</loc>
-  <lastmod>2025-09-03T08:21:57+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://hojat-gazestani.github.io/articles/category/kubernetes</loc>
-  <lastmod>2025-09-03T08:21:57+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://hojat-gazestani.github.io/articles/S3-Bandwidth-Benchmarking-with-Boto3</loc>
-  <lastmod>2025-09-03T08:21:57+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://hojat-gazestani.github.io/articles/configure-containerd-registries</loc>
-  <lastmod>2025-09-03T08:21:57+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://hojat-gazestani.github.io/articles/cephfs-nginx</loc>
-  <lastmod>2025-09-03T08:21:57+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://hojat-gazestani.github.io/articles/Linux-boot-process</loc>
-  <lastmod>2025-09-03T08:21:57+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-
-
 </urlset>
