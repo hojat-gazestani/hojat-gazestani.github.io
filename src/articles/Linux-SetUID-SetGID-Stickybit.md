@@ -16,9 +16,14 @@ category: "Linux-Core"
 6.  [Numeric Notation Cheat Sheet](#numeric-notation-cheat-sheet)
 7.  [Security Best Practices](#security-best-practices)
 
-
 **🔔 Prerequisite Reading:** This article covers **special** Linux permissions. Before diving in, ensure you understand how the kernel uses Real, Effective, Saved, and Filesystem UIDs to manage permissions and security for processe, please read our foundational guide:
 [**linux Read, Effective, saved, and Filesystem UID**](https://hojat-gazestani.github.io/articles/Linux-Standard-UNIX-Access-Control)
+
+
+
+
+
+![setuid-setgid-stickybit](/ProjectPic/setuid-setgid-stickybit.png)
 
 
 
