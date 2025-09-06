@@ -56,6 +56,14 @@ The real power of `sudoers` is using **aliases** to group users, commands, and h
 
 
 
+Here is the diagram:
+
+![sudoers-file-syntax-example-diagram](/ProjectPic/sudoers-file-syntax-example-diagram.png)
+
+
+
+
+
 Lets test the following line 
 
 ![sudoers-file-example-line1](/ProjectPic/sudoers-file-example-line1.png)
