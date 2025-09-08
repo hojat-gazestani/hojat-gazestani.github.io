@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { FaHome, FaArrowLeft, FaFolder } from "react-icons/fa";
 
-type ArticleNavProps = {
-  showArticlesLink?: boolean;
+type BlogNavProps = {
+  showBlogsLink?: boolean;
   category?: string;
 };
 
-export function ArticleNav({
-  showArticlesLink = true,
+export function BlogNav({
+  showBlogsLink = true,
   category,
-}: ArticleNavProps) {
+}: BlogNavProps) {
   return (
     <div className="flex flex-row items-center gap-4 mb-6 flex-wrap">
       <Link
@@ -22,7 +22,7 @@ export function ArticleNav({
 
       {category && (
         <Link
-          href={`/articles/category/${category}`}
+          href={`/blogs/category/${category}`}
           className="flex items-center text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap"
         >
           <FaFolder className="mr-2" />
@@ -30,13 +30,13 @@ export function ArticleNav({
         </Link>
       )}
 
-      {showArticlesLink && !category && (
+      {showBlogsLink && !category && (
         <Link
-          href="/articles"
+          href="/blogs"
           className="flex items-center text-blue-600 dark:text-blue-400 hover:underline whitespace-nowrap"
         >
           <FaArrowLeft className="mr-2" />
-          Back to Articles
+          Back to Blogs
         </Link>
       )}
     </div>

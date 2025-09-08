@@ -95,10 +95,10 @@ export const Hero = () => {
             {/* Call-to-Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center lg:items-start">
               <Link
-                href="/articles"
+                href="/blogs"
                 className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2"
               >
-                Read My Articles
+                Read My Blogs
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
               </Link>
 

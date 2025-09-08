@@ -10,7 +10,7 @@ import { ProfessionalCertificates } from "@/components/ProfessionalCertificates"
 import { Footer } from "@/components/Footer";
 import { StructuredData } from "@/components/StructuredData";
 import { metadataConfig } from "@/components/Metadata";
-import { LatestArticles } from "@/components/LatestArticles";
+import { LatestBlogs } from "@/components/LatestBlogs";
 
 export const metadata: Metadata = metadataConfig;
 
@@ -30,7 +30,7 @@ export default function Home() {
             <Hero />
             <PersonalInfo />
             <AboutMe />
-            <LatestArticles />
+            <LatestBlogs />
             <ProfessionalExperience />
             <Education />
             <Languages />

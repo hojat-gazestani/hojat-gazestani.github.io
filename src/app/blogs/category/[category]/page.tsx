@@ -1,7 +1,7 @@
-import { getArticlesByCategory, getAllCategories } from "@/lib/articles";
-import { ArticleList } from "@/components/ArticleList";
+import { getBlogsByCategory, getAllCategories } from "@/lib/blogs";
+import { BlogList } from "@/components/BlogList";
 import { notFound } from "next/navigation";
-import { ArticleNav } from "@/components/ArticleNav";
+import { BlogNav } from "@/components/BlogNav";
 
 export async function generateStaticParams() {
   const categories = getAllCategories();
@@ -14,17 +14,17 @@ export default async function CategoryPage({
   params: Promise<{ category: string }>;
 }) {
   const { category } = await params;
-  const articles = getArticlesByCategory(decodeURIComponent(category));
+  const blogs = getBlogsByCategory(decodeURIComponent(category));
 
-  if (articles.length === 0) {
+  if (blogs.length === 0) {
     notFound();
   }
 
   return (
     <div className="max-w-4xl mx-auto p-8 sm:p-20">
-      <h1 className="text-3xl font-bold mb-6">Articles in: {category}</h1>
-      <ArticleNav showArticlesLink={true} />
-      <ArticleList articles={articles} />
+      <h1 className="text-3xl font-bold mb-6">Blogs in: {category}</h1>
+      <BlogNav showBlogsLink={true} />
+      <BlogList blogs={blogs} />
     </div>
   );
 }

@@ -1,51 +1,51 @@
-import { getSortedArticlesData } from "@/lib/articles";
+import { getSortedBlogsData } from "@/lib/blogs";
 import Link from "next/link";
 import { FaCalendarAlt, FaArrowRight } from "react-icons/fa";
-import type { ArticleMeta } from "@/lib/articles";
+import type { BlogMeta } from "@/lib/blogs";
 
-export function LatestArticles() {
-  const latestArticles = getSortedArticlesData().slice(0, 3);
+export function LatestBlogs() {
+  const latestBlogs = getSortedBlogsData().slice(0, 3);
 
   return (
     <section className="mt-4">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-          Latest Articles
+          Latest Blogs
         </h2>
         <Link
-          href="/articles"
+          href="/blogs"
           className="flex items-center text-blue-600 dark:text-blue-400 hover:underline"
         >
-          View All Articles
+          View All Blogs
           <FaArrowRight className="ml-2" />
         </Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {latestArticles.map((article) => (
-          <ArticleCard key={article.id} article={article} />
+        {latestBlogs.map((blog) => (
+          <BlogCard key={blog.id} blog={blog} />
         ))}
       </div>
     </section>
   );
 }
 
-function ArticleCard({ article }: { article: ArticleMeta }) {
+function BlogCard({ blog }: { blog: BlogMeta }) {
   return (
     <div className="bg-white dark:bg-gray-800 p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow border-t-4 border-blue-500">
       <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
         <Link
-          href={`/articles/${article.id}`}
+          href={`/blogs/${blog.id}`}
           className="hover:text-blue-600 dark:hover:text-blue-400"
         >
-          {article.title}
+          {blog.title}
         </Link>
       </h3>
 
       <div className="flex items-center text-gray-500 dark:text-gray-400 text-sm mb-3">
         <FaCalendarAlt className="mr-2" />
         <span>
-          {new Date(article.date).toLocaleDateString("en-US", {
+          {new Date(blog.date).toLocaleDateString("en-US", {
             month: "short",
             day: "numeric",
             year: "numeric",
@@ -54,11 +54,11 @@ function ArticleCard({ article }: { article: ArticleMeta }) {
       </div>
 
       <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
-        {article.summary}
+        {blog.summary}
       </p>
 
       <Link
-        href={`/articles/${article.id}`}
+        href={`/blogs/${blog.id}`}
         className="mt-4 inline-block text-sm text-blue-600 dark:text-blue-400 hover:underline"
       >
         Read more

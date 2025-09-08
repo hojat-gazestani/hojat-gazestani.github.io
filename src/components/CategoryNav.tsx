@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getAllCategories } from "@/lib/articles";
+import { getAllCategories } from "@/lib/blogs";
 
 export async function CategoryNav() {
   const categories = getAllCategories();
@@ -11,7 +11,7 @@ export async function CategoryNav() {
         {categories.map((category) => (
           <Link
             key={category}
-            href={`/articles/category/${category}`}
+            href={`/blogs/category/${category}`}
             className="bg-gray-100 dark:bg-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
           >
             {category}

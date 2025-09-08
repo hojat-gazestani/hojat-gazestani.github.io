@@ -4,9 +4,9 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-const articlesDirectory = path.join(process.cwd(), 'src/articles');
+const blogsDirectory = path.join(process.cwd(), 'src/blogs');
 
-export interface ArticleMeta {
+export interface BlogMeta {
   id: string;
   title: string;
   date: string;
@@ -16,22 +16,22 @@ export interface ArticleMeta {
   readTime?: string;
 }
 
-export interface ArticleData extends ArticleMeta {
+export interface BlogData extends BlogMeta {
   contentHtml: string;
 }
 
-export function getSortedArticlesData(): ArticleMeta[] {
-  // Get file names under /articles
-  const fileNames = fs.readdirSync(articlesDirectory);
+export function getSortedBlogsData(): BlogMeta[] {
+  // Get file names under /blogs
+  const fileNames = fs.readdirSync(blogsDirectory);
   
-  const allArticlesData = fileNames
+  const allBlogsData = fileNames
     .filter(fileName => fileName.endsWith('.md'))
     .map((fileName) => {
       // Remove ".md" from file name to get id
       const id = fileName.replace(/\.md$/, '');
 
       // Read markdown file as string
-      const fullPath = path.join(articlesDirectory, fileName);
+      const fullPath = path.join(blogsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
 
       // Use gray-matter to parse the post metadata section
@@ -40,19 +40,19 @@ export function getSortedArticlesData(): ArticleMeta[] {
       // Combine the data with the id
       return {
         id,
-        ...matterResult.data as Omit<ArticleMeta, 'id'>
+        ...matterResult.data as Omit<BlogMeta, 'id'>
       };
     });
 
-  // Sort articles by date
-  return allArticlesData.sort((a, b) => {
+  // Sort blogs by date
+  return allBlogsData.sort((a, b) => {
     return a.date < b.date ? 1 : -1;
   });
 }
 
-export async function getArticleData(id: string): Promise<ArticleData | null> {
+export async function getBlogData(id: string): Promise<BlogData | null> {
   try {
-    const fullPath = path.join(articlesDirectory, `${id}.md`);
+    const fullPath = path.join(blogsDirectory, `${id}.md`);
     
     // Check if file exists
     if (!fs.existsSync(fullPath)) {
@@ -74,16 +74,16 @@ export async function getArticleData(id: string): Promise<ArticleData | null> {
     return {
       id,
       contentHtml,
-      ...matterResult.data as Omit<ArticleMeta, 'id'>
+      ...matterResult.data as Omit<BlogMeta, 'id'>
     };
   } catch (error) {
-    console.error(`Error processing article ${id}:`, error);
+    console.error(`Error processing blog ${id}:`, error);
     return null;
   }
 }
 
-export function getAllArticleIds() {
-  const fileNames = fs.readdirSync(articlesDirectory);
+export function getAllBlogIds() {
+  const fileNames = fs.readdirSync(blogsDirectory);
   return fileNames
     .filter(fileName => fileName.endsWith('.md'))
     .map((fileName) => ({
@@ -92,12 +92,12 @@ export function getAllArticleIds() {
 }
 
 export function getAllCategories(): string[] {
-  const articles = getSortedArticlesData();
-  const categories = new Set(articles.map(article => article.category));
+  const blogs = getSortedBlogsData();
+  const categories = new Set(blogs.map(blog => blog.category));
   return Array.from(categories).sort();
 }
 
-export function getArticlesByCategory(category: string): ArticleMeta[] {
-  return getSortedArticlesData().filter(article => article.category === category);
+export function getBlogsByCategory(category: string): BlogMeta[] {
+  return getSortedBlogsData().filter(blog => blog.category === category);
 }
 
