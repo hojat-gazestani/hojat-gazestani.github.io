@@ -67,7 +67,13 @@
 </url>
 <url>
   <loc>https://hojat-gazestani.github.io/articles/Linux-SetUID-SetGID-Stickybit</loc>
-  <lastmod>2025-09-03</lastmod>
+  <lastmod>2024-09-03</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/articles/Linux-sudoers-file-guide</loc>
+  <lastmod>2025-09-06</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.80</priority>
 </url>
