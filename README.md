@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 
-## 🚀 Live Demo
+## 🚀 Live
 
 [https://hojat-gazestani.github.io](https://hojat-gazestani.github.io)
 
