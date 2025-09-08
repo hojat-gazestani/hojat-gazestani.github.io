@@ -7,54 +7,60 @@
 
 <url>
   <loc>https://hojat-gazestani.github.io/</loc>
-  <lastmod>2024-09-03</lastmod>
+  <lastmod>2025-09-08</lastmod>
   <changefreq>monthly</changefreq>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://hojat-gazestani.github.io/articles</loc>
-  <lastmod>2024-09-03</lastmod>
+  <loc>https://hojat-gazestani.github.io/articles/</loc>
+  <lastmod>2025-09-08</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hojat-gazestani.github.io/articles/cephfs-nginx</loc>
+  <loc>https://hojat-gazestani.github.io/articles/category/linux/</loc>
+  <lastmod>2025-09-08</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/articles/cephfs-nginx/</loc>
   <lastmod>2024-08-25</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hojat-gazestani.github.io/articles/configure-containerd-registries</loc>
+  <loc>https://hojat-gazestani.github.io/articles/configure-containerd-registries/</loc>
   <lastmod>2024-08-25</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hojat-gazestani.github.io/articles/linux-boot-process</loc>
+  <loc>https://hojat-gazestani.github.io/articles/linux-boot-process/</loc>
   <lastmod>2024-08-30</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hojat-gazestani.github.io/articles/linux-standard-unix-access-control</loc>
+  <loc>https://hojat-gazestani.github.io/articles/linux-standard-unix-access-control/</loc>
   <lastmod>2024-09-02</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hojat-gazestani.github.io/articles/linux-systemd-service-manager</loc>
+  <loc>https://hojat-gazestani.github.io/articles/linux-systemd-service-manager/</loc>
   <lastmod>2024-08-31</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hojat-gazestani.github.io/articles/linux-virtual-file-system</loc>
+  <loc>https://hojat-gazestani.github.io/articles/linux-virtual-file-system/</loc>
   <lastmod>2024-09-02</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hojat-gazestani.github.io/articles/s3-bandwidth-benchmarking-with-boto3</loc>
+  <loc>https://hojat-gazestani.github.io/articles/s3-bandwidth-benchmarking-with-boto3/</loc>
   <lastmod>2024-08-25</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.80</priority>
@@ -66,14 +72,14 @@
   <priority>0.50</priority>
 </url>
 <url>
-  <loc>https://hojat-gazestani.github.io/articles/Linux-SetUID-SetGID-Stickybit</loc>
+  <loc>https://hojat-gazestani.github.io/articles/linux-setuid-setgid-stickybit/</loc>
   <lastmod>2024-09-03</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://hojat-gazestani.github.io/articles/Linux-sudoers-file-guide</loc>
-  <lastmod>2025-09-06</lastmod>
+  <loc>https://hojat-gazestani.github.io/articles/linux-sudoers-file-guide/</loc>
+  <lastmod>2024-09-06</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.80</priority>
 </url>
