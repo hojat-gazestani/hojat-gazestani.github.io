@@ -1,0 +1,19 @@
+# Hojat Gazestani
+
+> Cloud Engineer & DevOps Specialist. Technical blog covering Linux internals, Kubernetes, AWS/OpenStack cloud, and DevOps — 10+ years of hands-on experience.
+
+## About
+- Resume (PDF): https://hojat-gazestani.github.io/resume.pdf
+- GitHub: https://github.com/hojat-gazestani
+- LinkedIn: https://www.linkedin.com/in/hojat-gazestani/
+
+## Posts (9)
+- [Linux Sudoers File Configuration: A Practical Guide with Examples](https://hojat-gazestani.github.io/blogs/Linux-sudoers-file-guide/) — How to configure the /etc/sudoers file. Explains syntax, aliases, and best practices for granting sudo access without a password.
+- [Understanding Linux Special Permissions: SUID, SGID, and the Sticky Bit](https://hojat-gazestani.github.io/blogs/Linux-SetUID-SetGID-Stickybit/) — A clear guide to Linux's special permission bits - SUID, SGID, and Sticky Bit - and how to use them for system security and collaboration.
+- [Understanding Linux Process UIDs: Real, Effective, Saved, and Filesystem](https://hojat-gazestani.github.io/blogs/Linux-Standard-UNIX-Access-Control/) — Linux user IDs (UIDs) and how the kernel uses Real, Effective, Saved, and Filesystem UIDs to manage permissions and security for processes like Nginx and passwd.
+- [What is the Linux VFS? Understanding the Virtual File System](https://hojat-gazestani.github.io/blogs/Linux-Virtual-File-System/) — A deep dive into the Linux Kernel's Virtual File System (VFS), the abstraction layer that unifies Ext4, NTFS, proc, and more under a single interface. Learn how VFS works with superblocks, inodes, and dentries.
+- [Understanding systemd: The Modern Linux Service Manager](https://hojat-gazestani.github.io/blogs/Linux-systemd-service-manager/) — A comprehensive guide to understanding and mastering systemd, the essential init system and service manager for modern Linux distributions. Learn about units, targets, journalctl, and practical systemctl commands.
+- [Measuring S3 Storage Bandwidth with Python and Boto3](https://hojat-gazestani.github.io/blogs/S3-Bandwidth-Benchmarking-with-Boto3/) — A comprehensive guide to testing upload and download bandwidth to S3-compatible storage using Python and Boto3.
+- [How to Configure Containerd for HTTP and Private Registries (With Examples)](https://hojat-gazestani.github.io/blogs/configure-containerd-registries/) — Step-by-step guide to configure Containerd's CRI plugin to securely pull container images from insecure HTTP and authenticated private registries like GitLab. Includes troubleshooting tips.
+- [How I Used CephFS to Sync NGINX Configurations Across Multiple Servers](https://hojat-gazestani.github.io/blogs/cephfs-nginx/) — A guide to synchronizing NGINX configurations across multiple servers using CephFS distributed file storage
+- [The Linux Boot Process Explained: From BIOS/UEFI to Kernel](https://hojat-gazestani.github.io/blogs/Linux-boot-process/) — A detailed guide to understanding the Linux boot sequence, covering the roles of BIOS, UEFI, bootloaders like GRUB, and the final handoff to the kernel.

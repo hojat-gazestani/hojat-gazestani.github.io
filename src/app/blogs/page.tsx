@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import { getSortedBlogsData } from "@/lib/blogs";
 import { BlogList } from "@/components/BlogList";
 import { CategoryNav } from "@/components/CategoryNav";
 import { BlogNav } from "@/components/BlogNav";
+
+export const metadata: Metadata = {
+  title: "Blogs - Hojat Gazestani",
+  description:
+    "Technical blog posts by Hojat Gazestani covering Linux internals, Kubernetes, AWS/OpenStack cloud computing, and DevOps engineering.",
+};
 
 export default async function BlogsPage() {
   const blogs = await getSortedBlogsData();

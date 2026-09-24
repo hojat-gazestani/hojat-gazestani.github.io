@@ -1,7 +1,21 @@
+import type { Metadata } from "next";
 import { getBlogsByCategory, getAllCategories } from "@/lib/blogs";
 import { BlogList } from "@/components/BlogList";
 import { notFound } from "next/navigation";
 import { BlogNav } from "@/components/BlogNav";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}): Promise<Metadata> {
+  const { category } = await params;
+  const decoded = decodeURIComponent(category);
+  return {
+    title: `${decoded} - Hojat Gazestani`,
+    description: `All ${decoded} blog posts by Hojat Gazestani.`,
+  };
+}
 
 export async function generateStaticParams() {
   const categories = getAllCategories();

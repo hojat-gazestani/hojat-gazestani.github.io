@@ -1,6 +1,7 @@
 // page.tsx
 import { getBlogData, getAllBlogIds } from "@/lib/blogs";
 import { BlogContent } from "@/components/BlogContent";
+import { BlogStructuredData } from "@/components/BlogStructuredData";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BlogNav } from "@/components/BlogNav";
@@ -46,9 +47,12 @@ export default async function BlogPage({
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-8 sm:p-20">
-      <BlogNav category={blog.category} />
-      <BlogContent blog={blog} />
-    </div>
+    <>
+      <BlogStructuredData blog={blog} />
+      <div className="max-w-4xl mx-auto p-8 sm:p-20">
+        <BlogNav category={blog.category} />
+        <BlogContent blog={blog} />
+      </div>
+    </>
   );
 }
