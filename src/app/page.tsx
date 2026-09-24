@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { AboutMe } from "@/components/AboutMe";
 import { PersonalInfo } from "@/components/PersonalInfo";
 import { ProfessionalExperience } from "@/components/ProfessionalExperience";
+import { Projects } from "@/components/Projects";
 import { Education } from "@/components/Education";
 import { Languages } from "@/components/Languages";
 import { OnlineContent } from "@/components/OnlineContent";
@@ -32,6 +33,7 @@ export default function Home() {
             <AboutMe />
             <LatestBlogs />
             <ProfessionalExperience />
+            <Projects />
             <Education />
             <Languages />
             <OnlineContent />
