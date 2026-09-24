@@ -36,6 +36,12 @@
   <priority>0.70</priority>
 </url>
 <url>
+  <loc>https://hojat-gazestani.github.io/blogs/category/haproxy/</loc>
+  <lastmod>2026-09-24</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.70</priority>
+</url>
+<url>
   <loc>https://hojat-gazestani.github.io/blogs/category/kubernetes/</loc>
   <lastmod>2025-08-24</lastmod>
   <changefreq>weekly</changefreq>
@@ -217,6 +223,198 @@
 </url>
 <url>
   <loc>https://hojat-gazestani.github.io/blogs/machine-learning/05-natural-language-processing/04-multi-query-retrieval/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/01-Conepts/01-Protocols/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/01-Conepts/02-Tune-Timeouts/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/01-Conepts/03-Proxy/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/01-Conepts/04-Load-balancer/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/02-lab-preparation/01-HAProxy-installation/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/02-lab-preparation/02-Docker-installation/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/02-lab-preparation/03-Python-installation/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/02-lab-preparation/04-my-app/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/02-lab-preparation/05-auth-app/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/02-lab-preparation/06-img-app/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/02-lab-preparation/07-Postgres/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/02-lab-preparation/ha-proxy/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/03-HAProxy/01-Backend-Frondend/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/03-HAProxy/02-timeout/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/03-HAProxy/03-listen/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/03-HAProxy/04-loadbalance/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/03-HAProxy/05-Layer-4-load-balancer/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/03-HAProxy/06-Layer-7-load-balancer/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/03-HAProxy/07-health-check/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/03-HAProxy/08-Slowstart/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/03-HAProxy/09-ACL/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/03-HAProxy/20-ActiveActive-cluster/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/04-Certificate/01-sslTermination/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/04-Certificate/02-sshPashthrough/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/04-Certificate/03-rencrypt/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/04-Certificate/04-redirect-HTTP-HTTPS/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/05-Logging/01-logging/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/05-Logging/02-rsyslo/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/06-cache/01-cache/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/07-keepalive/01-Keepalive/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/07-keepalive/02-peers/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/haproxy/07-keepalive/03-command-line/</loc>
   <lastmod>2025-09-06</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.80</priority>

@@ -6,7 +6,7 @@ const matter = require('gray-matter');
 const ROOT = process.cwd();
 const BLOGS_DIR = path.join(ROOT, 'src/blogs');
 const NOTES_DIR = path.join(ROOT, process.env.NOTES_DIR || '_notes');
-const NOTES_TOPICS = ['machine-learning'];
+const NOTES_TOPICS = ['machine-learning', 'haproxy'];
 
 // Recursively list .md files under a directory (relative, '/'-separated).
 // Returns [] if the directory does not exist (e.g. notes not checked out).
@@ -30,6 +30,11 @@ function firstHeading(content) {
 
 function prettifyName(base) {
   return base.replace(/[-_]+/g, ' ').trim();
+}
+
+// URL-safe slug for a single path segment (preserves case; spaces/underscores/punct -> '-').
+function slugify(segment) {
+  return segment.replace(/[^a-zA-Z0-9]+/g, '-').replace(/^-+/, '').replace(/-+$/, '');
 }
 
 // Rewrite GitHub "blob" image URLs to "raw" so they load as images on a static site.
@@ -73,11 +78,12 @@ function collectPosts() {
     posts.push(deriveMeta(slug, path.join(BLOGS_DIR, rel), 'general'));
   }
 
-  // Notes: nested, no frontmatter. slug = <topic>/<relative path>.
+  // Notes: nested, no frontmatter. slug = <topic>/<relative path>, slugified
+  // per segment so spaces/underscores in file names become clean URL segments.
   for (const topic of NOTES_TOPICS) {
     const dir = path.join(NOTES_DIR, topic);
     for (const rel of walkMd(dir)) {
-      const slug = `${topic}/${rel.replace(/\.md$/, '')}`;
+      const slug = [topic, ...rel.replace(/\.md$/, '').split('/')].map(slugify).join('/');
       posts.push(deriveMeta(slug, path.join(dir, rel), topic));
     }
   }
