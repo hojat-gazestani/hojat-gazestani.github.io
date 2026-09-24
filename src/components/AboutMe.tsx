@@ -6,12 +6,22 @@ import {
   FaGitAlt,
   FaServer,
   FaCode,
+  FaCloud,
+  FaShieldAlt,
+  FaChartLine,
+  FaBrain,
+  FaPlug,
+  FaRobot,
+  FaSync,
+  FaBolt,
+  FaCogs,
+  FaKey,
+  FaProjectDiagram,
 } from "react-icons/fa";
 import {
   SiKubernetes,
   SiOpenstack,
   SiAnsible,
-  SiTerraform,
   SiGitlab,
   SiArgo,
   SiPrometheus,
@@ -20,6 +30,13 @@ import {
   SiRedis,
   SiPfsense,
   SiDjango,
+  SiHelm,
+  SiLangchain,
+  SiCeph,
+  SiFlux,
+  SiCelery,
+  SiElasticsearch,
+  SiNginx,
 } from "react-icons/si";
 
 export const AboutMe = () => {
@@ -31,6 +48,11 @@ export const AboutMe = () => {
           name: "AWS",
           level: "Expert",
           icon: <FaAws className="text-orange-500" />,
+        },
+        {
+          name: "EKS",
+          level: "Expert",
+          icon: <FaCloud className="text-orange-500" />,
         },
         {
           name: "OpenStack",
@@ -47,10 +69,25 @@ export const AboutMe = () => {
           level: "Expert",
           icon: <FaDocker className="text-blue-500" />,
         },
+        {
+          name: "Ceph",
+          level: "Expert",
+          icon: <SiCeph className="text-blue-500" />,
+        },
+        {
+          name: "Helm",
+          level: "Expert",
+          icon: <SiHelm className="text-teal-500" />,
+        },
+        {
+          name: "Kubespray",
+          level: "Expert",
+          icon: <FaCode className="text-gray-700 dark:text-gray-300" />,
+        },
       ],
     },
     {
-      name: "Programming & Automation",
+      name: "Programming",
       skills: [
         {
           name: "Python",
@@ -67,10 +104,40 @@ export const AboutMe = () => {
           level: "Expert",
           icon: <SiAnsible className="text-red-500" />,
         },
+      ],
+    },
+    {
+      name: "CI/CD & GitOps",
+      skills: [
         {
-          name: "Terraform",
+          name: "GitLab",
           level: "Expert",
-          icon: <SiTerraform className="text-purple-500" />,
+          icon: <SiGitlab className="text-orange-500" />,
+        },
+        {
+          name: "Git",
+          level: "Expert",
+          icon: <FaGitAlt className="text-orange-500" />,
+        },
+        {
+          name: "ArgoCD",
+          level: "Expert",
+          icon: <SiArgo className="text-blue-500" />,
+        },
+        {
+          name: "FluxCD",
+          level: "Expert",
+          icon: <SiFlux className="text-amber-500" />,
+        },
+        {
+          name: "GitOps",
+          level: "Expert",
+          icon: <FaSync className="text-blue-500" />,
+        },
+        {
+          name: "CI/CD",
+          level: "Expert",
+          icon: <FaCogs className="text-purple-500" />,
         },
       ],
     },
@@ -85,27 +152,17 @@ export const AboutMe = () => {
         {
           name: "Nginx",
           level: "Expert",
-          icon: <FaServer className="text-green-500" />,
+          icon: <SiNginx className="text-green-500" />,
         },
         {
-          name: "HAproxy",
+          name: "HAProxy",
           level: "Expert",
           icon: <FaServer className="text-blue-500" />,
         },
         {
-          name: "Git",
+          name: "Celery",
           level: "Expert",
-          icon: <FaGitAlt className="text-orange-500" />,
-        },
-        {
-          name: "GitLab",
-          level: "Expert",
-          icon: <SiGitlab className="text-orange-500" />,
-        },
-        {
-          name: "ArgoCD",
-          level: "Expert",
-          icon: <SiArgo className="text-blue-500" />,
+          icon: <SiCelery className="text-amber-600" />,
         },
       ],
     },
@@ -118,6 +175,11 @@ export const AboutMe = () => {
           icon: <SiPrometheus className="text-orange-500" />,
         },
         {
+          name: "VictoriaMetrics",
+          level: "Expert",
+          icon: <FaChartLine className="text-blue-500" />,
+        },
+        {
           name: "Grafana",
           level: "Expert",
           icon: <SiGrafana className="text-orange-500" />,
@@ -126,6 +188,46 @@ export const AboutMe = () => {
           name: "Zabbix",
           level: "Expert",
           icon: <FaServer className="text-red-500" />,
+        },
+        {
+          name: "Elasticsearch",
+          level: "Expert",
+          icon: <SiElasticsearch className="text-amber-500" />,
+        },
+      ],
+    },
+    {
+      name: "AI & LLM",
+      skills: [
+        {
+          name: "LangChain",
+          level: "Expert",
+          icon: <SiLangchain className="text-blue-500" />,
+        },
+        {
+          name: "LangGraph",
+          level: "Expert",
+          icon: <FaProjectDiagram className="text-amber-600" />,
+        },
+        {
+          name: "RAG",
+          level: "Expert",
+          icon: <FaBrain className="text-purple-500" />,
+        },
+        {
+          name: "MCP",
+          level: "Expert",
+          icon: <FaPlug className="text-orange-500" />,
+        },
+        {
+          name: "LLM Agents",
+          level: "Expert",
+          icon: <FaRobot className="text-purple-500" />,
+        },
+        {
+          name: "vLLM",
+          level: "Expert",
+          icon: <FaBolt className="text-blue-500" />,
         },
       ],
     },
@@ -138,7 +240,7 @@ export const AboutMe = () => {
           icon: <FaLinux className="text-yellow-500" />,
         },
         {
-          name: "Pfsense",
+          name: "pfSense",
           level: "Expert",
           icon: <SiPfsense className="text-orange-500" />,
         },
@@ -146,6 +248,16 @@ export const AboutMe = () => {
           name: "Juniper",
           level: "Expert",
           icon: <FaServer className="text-blue-500" />,
+        },
+        {
+          name: "Firepower",
+          level: "Expert",
+          icon: <FaShieldAlt className="text-red-500" />,
+        },
+        {
+          name: "PKI",
+          level: "Expert",
+          icon: <FaKey className="text-green-500" />,
         },
       ],
     },
