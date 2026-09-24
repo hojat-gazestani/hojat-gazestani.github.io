@@ -1,39 +1,31 @@
 const fs = require("fs");
 const path = require("path");
-const matter = require("gray-matter");
+const { collectPosts, dateKey } = require("../src/lib/content.js");
 
 const BASE_URL = "https://hojat-gazestani.github.io";
-const blogsDirectory = path.join(process.cwd(), "src/blogs");
 const outPath = path.join(process.cwd(), "public/llms.txt");
 
-const fileNames = fs.readdirSync(blogsDirectory).filter((f) => f.endsWith(".md"));
+const posts = collectPosts()
+  .slice()
+  .sort((a, b) => dateKey(b.date) - dateKey(a.date));
 
-const blogs = fileNames
-  .map((fileName) => {
-    const id = fileName.replace(/\.md$/, "");
-    const { data } = matter(
-      fs.readFileSync(path.join(blogsDirectory, fileName), "utf8")
-    );
-    return { id, ...data };
-  })
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const line = (p) =>
+  `- [${p.title}](${BASE_URL}/blogs/${p.slug}/)` + (p.summary ? ` — ${p.summary}` : "");
 
-const postLines = blogs
-  .map((blog) => `- [${blog.title}](${BASE_URL}/blogs/${blog.id}/) — ${blog.summary}`)
-  .join("\n");
+const postLines = posts.map(line).join("\n");
 
 const content = `# Hojat Gazestani
 
-> Cloud Engineer & DevOps Specialist. Technical blog covering Linux internals, Kubernetes, AWS/OpenStack cloud, and DevOps — 10+ years of hands-on experience.
+> Cloud Engineer & DevOps Specialist. Technical blog covering Linux, Kubernetes, AWS/OpenStack cloud, DevOps, and Machine Learning — 10+ years of hands-on experience.
 
 ## About
 - Resume (PDF): ${BASE_URL}/resume.pdf
 - GitHub: https://github.com/hojat-gazestani
 - LinkedIn: https://www.linkedin.com/in/hojat-gazestani/
 
-## Posts (${blogs.length})
+## Posts (${posts.length})
 ${postLines}
 `;
 
 fs.writeFileSync(outPath, content);
-console.log(`llms.txt generated with ${blogs.length} posts`);
+console.log(`llms.txt generated with ${posts.length} posts`);

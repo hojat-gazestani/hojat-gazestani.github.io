@@ -1,13 +1,13 @@
 # Hojat Gazestani
 
-> Cloud Engineer & DevOps Specialist. Technical blog covering Linux internals, Kubernetes, AWS/OpenStack cloud, and DevOps — 10+ years of hands-on experience.
+> Cloud Engineer & DevOps Specialist. Technical blog covering Linux, Kubernetes, AWS/OpenStack cloud, DevOps, and Machine Learning — 10+ years of hands-on experience.
 
 ## About
 - Resume (PDF): https://hojat-gazestani.github.io/resume.pdf
 - GitHub: https://github.com/hojat-gazestani
 - LinkedIn: https://www.linkedin.com/in/hojat-gazestani/
 
-## Posts (9)
+## Posts (29)
 - [Linux Sudoers File Configuration: A Practical Guide with Examples](https://hojat-gazestani.github.io/blogs/Linux-sudoers-file-guide/) — How to configure the /etc/sudoers file. Explains syntax, aliases, and best practices for granting sudo access without a password.
 - [Understanding Linux Special Permissions: SUID, SGID, and the Sticky Bit](https://hojat-gazestani.github.io/blogs/Linux-SetUID-SetGID-Stickybit/) — A clear guide to Linux's special permission bits - SUID, SGID, and Sticky Bit - and how to use them for system security and collaboration.
 - [Understanding Linux Process UIDs: Real, Effective, Saved, and Filesystem](https://hojat-gazestani.github.io/blogs/Linux-Standard-UNIX-Access-Control/) — Linux user IDs (UIDs) and how the kernel uses Real, Effective, Saved, and Filesystem UIDs to manage permissions and security for processes like Nginx and passwd.
@@ -17,3 +17,23 @@
 - [How to Configure Containerd for HTTP and Private Registries (With Examples)](https://hojat-gazestani.github.io/blogs/configure-containerd-registries/) — Step-by-step guide to configure Containerd's CRI plugin to securely pull container images from insecure HTTP and authenticated private registries like GitLab. Includes troubleshooting tips.
 - [How I Used CephFS to Sync NGINX Configurations Across Multiple Servers](https://hojat-gazestani.github.io/blogs/cephfs-nginx/) — A guide to synchronizing NGINX configurations across multiple servers using CephFS distributed file storage
 - [The Linux Boot Process Explained: From BIOS/UEFI to Kernel](https://hojat-gazestani.github.io/blogs/Linux-boot-process/) — A detailed guide to understanding the Linux boot sequence, covering the roles of BIOS, UEFI, bootloaders like GRUB, and the final handoff to the kernel.
+- [Introduction](https://hojat-gazestani.github.io/blogs/machine-learning/00-preface/01-introduction/)
+- [What is Machine Learning?](https://hojat-gazestani.github.io/blogs/machine-learning/01-machine-learning-fundamentals/01-what-is-ml/)
+- [Machine Learning Categories](https://hojat-gazestani.github.io/blogs/machine-learning/01-machine-learning-fundamentals/02-ml-categories/)
+- [THE ML TOOLBOX](https://hojat-gazestani.github.io/blogs/machine-learning/01-machine-learning-fundamentals/03-ml-toolbox/)
+- [DATA SCRUBBING](https://hojat-gazestani.github.io/blogs/machine-learning/01-machine-learning-fundamentals/04-data-scrubbing/)
+- [SETTING UP YOUR DATA](https://hojat-gazestani.github.io/blogs/machine-learning/01-machine-learning-fundamentals/05-setting-up-your-data/)
+- [REGRESSION ANALYSIS](https://hojat-gazestani.github.io/blogs/machine-learning/02-classical-machine-learning/01-regression-analysis/)
+- [Logistic Regression](https://hojat-gazestani.github.io/blogs/machine-learning/02-classical-machine-learning/02-logistic-regression/)
+- [Support Vector Machine (SVM)](https://hojat-gazestani.github.io/blogs/machine-learning/02-classical-machine-learning/03-support-vector-machines/)
+- [k-nearest-neighbors](https://hojat-gazestani.github.io/blogs/machine-learning/02-classical-machine-learning/04-k-nearest-neighbors/)
+- [CLUSTERING](https://hojat-gazestani.github.io/blogs/machine-learning/02-classical-machine-learning/05-clustering-introduction/)
+- [k-Means Clustering](https://hojat-gazestani.github.io/blogs/machine-learning/02-classical-machine-learning/06-k-means-clustering/)
+- [What is k in clustering?](https://hojat-gazestani.github.io/blogs/machine-learning/02-classical-machine-learning/07-setting-k/)
+- [01 neural networks](https://hojat-gazestani.github.io/blogs/machine-learning/03-neural-networks/01-neural-networks/)
+- [Convolutional Neural Networks (CNNs)](https://hojat-gazestani.github.io/blogs/machine-learning/04-computer-visin/01-cnn-theory/)
+- [01 transformers and llms](https://hojat-gazestani.github.io/blogs/machine-learning/05-natural-language-processing/01-transformers-and-llms/)
+- [Retrieval-Augmented Generation (RAG)](https://hojat-gazestani.github.io/blogs/machine-learning/05-natural-language-processing/02-0-rag-langchian/)
+- [**LangChain Expression Language (LCEL)** pipeline](https://hojat-gazestani.github.io/blogs/machine-learning/05-natural-language-processing/02-1-langchian-Expression-Language-LCEL/)
+- [03 rag langgraph](https://hojat-gazestani.github.io/blogs/machine-learning/05-natural-language-processing/03-rag-langgraph/)
+- [Multi-Query Retrieval](https://hojat-gazestani.github.io/blogs/machine-learning/05-natural-language-processing/04-multi-query-retrieval/)

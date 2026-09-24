@@ -20,16 +20,18 @@ export function BlogContent({ blog }: { blog: BlogData }) {
           {blog.title}
         </h1>
 
-        <div className="flex items-center text-gray-500 dark:text-gray-400 mb-6 text-sm">
-          <FaCalendarAlt className="mr-2" />
-          <span>
-            {new Date(blog.date).toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </span>
-        </div>
+        {blog.date && (
+          <div className="flex items-center text-gray-500 dark:text-gray-400 mb-6 text-sm">
+            <FaCalendarAlt className="mr-2" />
+            <span>
+              {new Date(blog.date).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </span>
+          </div>
+        )}
 
         <div
           className="prose dark:prose-invert max-w-none"

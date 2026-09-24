@@ -1,18 +1,19 @@
-// page.tsx
-import { getBlogData, getAllBlogIds } from "@/lib/blogs";
+import { getBlogData, getAllBlogSlugs } from "@/lib/blogs";
 import { BlogContent } from "@/components/BlogContent";
 import { BlogStructuredData } from "@/components/BlogStructuredData";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BlogNav } from "@/components/BlogNav";
 
+type Params = { slug: string[] };
+
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<Params>;
 }): Promise<Metadata> {
-  const { id } = await params;
-  const blog = await getBlogData(id);
+  const { slug } = await params;
+  const blog = await getBlogData(slug.join("/"));
 
   if (!blog) {
     return {
@@ -23,24 +24,17 @@ export async function generateMetadata({
 
   return {
     title: `${blog.title} - Hojat Gazestani`,
-    description: blog.summary,
+    description: blog.summary || blog.title,
   };
 }
 
 export async function generateStaticParams() {
-  const blogs = await getAllBlogIds();
-  return blogs.map((blog) => ({
-    id: blog.id,
-  }));
+  return getAllBlogSlugs();
 }
 
-export default async function BlogPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const { id } = await params;
-  const blog = await getBlogData(id);
+export default async function BlogPage({ params }: { params: Promise<Params> }) {
+  const { slug } = await params;
+  const blog = await getBlogData(slug.join("/"));
 
   if (!blog) {
     notFound();

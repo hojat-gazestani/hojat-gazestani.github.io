@@ -42,20 +42,24 @@ function BlogCard({ blog }: { blog: BlogMeta }) {
         </Link>
       </h3>
 
-      <div className="flex items-center text-gray-500 dark:text-gray-400 text-sm mb-3">
-        <FaCalendarAlt className="mr-2" />
-        <span>
-          {new Date(blog.date).toLocaleDateString("en-US", {
-            month: "short",
-            day: "numeric",
-            year: "numeric",
-          })}
-        </span>
-      </div>
+      {blog.date && (
+        <div className="flex items-center text-gray-500 dark:text-gray-400 text-sm mb-3">
+          <FaCalendarAlt className="mr-2" />
+          <span>
+            {new Date(blog.date).toLocaleDateString("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            })}
+          </span>
+        </div>
+      )}
 
-      <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
-        {blog.summary}
-      </p>
+      {blog.summary && (
+        <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+          {blog.summary}
+        </p>
+      )}
 
       <Link
         href={`/blogs/${blog.id}`}

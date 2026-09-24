@@ -16,14 +16,18 @@ const AUTHOR = {
 };
 
 export function BlogStructuredData({ blog }: { blog: BlogData }) {
-  const parsed = new Date(blog.date);
-  const isoDate = Number.isNaN(parsed.getTime()) ? null : parsed.toISOString();
+  let isoDate: string | null = null;
+  if (blog.date) {
+    const t = new Date(blog.date).getTime();
+    if (!Number.isNaN(t)) {
+      isoDate = new Date(blog.date).toISOString();
+    }
+  }
 
   const jsonLd: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: blog.title,
-    description: blog.summary,
     image: `${BASE_URL}/me.png`,
     author: AUTHOR,
     publisher: {
@@ -39,6 +43,9 @@ export function BlogStructuredData({ blog }: { blog: BlogData }) {
     articleSection: blog.category,
   };
 
+  if (blog.summary) {
+    jsonLd.description = blog.summary;
+  }
   if (isoDate) {
     jsonLd.datePublished = isoDate;
     jsonLd.dateModified = isoDate;

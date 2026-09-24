@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# Notes checkout (CI: actions/checkout to _notes; local: symlink _notes -> ../Notes)
+/_notes
+
 # production
 /build
 

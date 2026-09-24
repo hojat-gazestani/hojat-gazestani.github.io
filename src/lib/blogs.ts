@@ -1,104 +1,83 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
-
-const blogsDirectory = path.join(process.cwd(), 'src/blogs');
+import { remark } from "remark";
+import html from "remark-html";
+import { collectPosts, rewriteImageUrls, dateKey } from "./content.js";
 
 export interface BlogMeta {
-  id: string;
+  id: string; // slug; multi-segment for notes (e.g. "machine-learning/01-.../01-what-is-ml")
   title: string;
-  date: string;
-  summary: string;
+  date?: string;
+  summary?: string;
   tags: string[];
   category: string;
-  readTime?: string;
 }
 
 export interface BlogData extends BlogMeta {
   contentHtml: string;
 }
 
-export function getSortedBlogsData(): BlogMeta[] {
-  // Get file names under /blogs
-  const fileNames = fs.readdirSync(blogsDirectory);
-  
-  const allBlogsData = fileNames
-    .filter(fileName => fileName.endsWith('.md'))
-    .map((fileName) => {
-      // Remove ".md" from file name to get id
-      const id = fileName.replace(/\.md$/, '');
-
-      // Read markdown file as string
-      const fullPath = path.join(blogsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-      // Use gray-matter to parse the post metadata section
-      const matterResult = matter(fileContents);
-
-      // Combine the data with the id
-      return {
-        id,
-        ...matterResult.data as Omit<BlogMeta, 'id'>
-      };
-    });
-
-  // Sort blogs by date (newest first), normalizing to a timestamp so mixed
-  // string/Date frontmatter values sort correctly.
-  return allBlogsData.sort((a, b) => {
-    return new Date(b.date).getTime() - new Date(a.date).getTime();
-  });
+interface Post {
+  slug: string;
+  title: string;
+  date?: string;
+  summary?: string;
+  tags: string[];
+  category: string;
+  content: string;
 }
 
-export async function getBlogData(id: string): Promise<BlogData | null> {
+function allPosts(): Post[] {
+  return collectPosts() as Post[];
+}
+
+function toMeta(p: Post): BlogMeta {
+  return {
+    id: p.slug,
+    title: p.title,
+    date: p.date,
+    summary: p.summary,
+    tags: p.tags,
+    category: p.category,
+  };
+}
+
+function sortByDateDesc(list: BlogMeta[]): BlogMeta[] {
+  return list.sort((a, b) => dateKey(b.date) - dateKey(a.date));
+}
+
+// All posts (existing + notes), newest dated posts first; undated notes after.
+export function getSortedBlogsData(): BlogMeta[] {
+  return sortByDateDesc(allPosts().map((p) => toMeta(p)));
+}
+
+export async function getBlogData(slug: string): Promise<BlogData | null> {
   try {
-    const fullPath = path.join(blogsDirectory, `${id}.md`);
-    
-    // Check if file exists
-    if (!fs.existsSync(fullPath)) {
-      return null;
-    }
-    
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const post = allPosts().find((p) => p.slug === slug);
+    if (!post) return null;
 
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents);
-
-    // Use remark to convert markdown into HTML string
-    const processedContent = await remark()
+    const processed = await remark()
       .use(html)
-      .process(matterResult.content);
-    const contentHtml = processedContent.toString();
+      .process(rewriteImageUrls(post.content));
 
-    // Combine the data with the id and contentHtml
-    return {
-      id,
-      contentHtml,
-      ...matterResult.data as Omit<BlogMeta, 'id'>
-    };
+    return { ...toMeta(post), contentHtml: processed.toString() };
   } catch (error) {
-    console.error(`Error processing blog ${id}:`, error);
+    console.error(`Error processing blog ${slug}:`, error);
     return null;
   }
 }
 
-export function getAllBlogIds() {
-  const fileNames = fs.readdirSync(blogsDirectory);
-  return fileNames
-    .filter(fileName => fileName.endsWith('.md'))
-    .map((fileName) => ({
-      id: fileName.replace(/\.md$/, '')
-    }));
+// Slugs for the catch-all /blogs/[...slug] route.
+export function getAllBlogSlugs(): { slug: string[] }[] {
+  return allPosts().map((p) => ({ slug: p.slug.split("/") }));
 }
 
 export function getAllCategories(): string[] {
-  const blogs = getSortedBlogsData();
-  const categories = new Set(blogs.map(blog => blog.category));
-  return Array.from(categories).sort();
+  return [...new Set(allPosts().map((p) => p.category))].sort();
 }
 
 export function getBlogsByCategory(category: string): BlogMeta[] {
-  return getSortedBlogsData().filter(blog => blog.category === category);
+  return sortByDateDesc(
+    allPosts()
+      .filter((p) => p.category === category)
+      .map((p) => toMeta(p))
+  );
 }
-

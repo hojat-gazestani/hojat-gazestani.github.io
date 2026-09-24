@@ -19,20 +19,24 @@ export function BlogList({ blogs }: { blogs: BlogMeta[] }) {
             </Link>
           </h3>
 
-          <div className="flex items-center text-gray-500 dark:text-gray-400 text-sm mb-3">
-            <FaCalendarAlt className="mr-2" />
-            <span>
-              {new Date(blog.date).toLocaleDateString("en-US", {
-                month: "short",
-                day: "numeric",
-                year: "numeric",
-              })}
-            </span>
-          </div>
+          {blog.date && (
+            <div className="flex items-center text-gray-500 dark:text-gray-400 text-sm mb-3">
+              <FaCalendarAlt className="mr-2" />
+              <span>
+                {new Date(blog.date).toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </span>
+            </div>
+          )}
 
-          <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-2 mb-4">
-            {blog.summary}
-          </p>
+          {blog.summary && (
+            <p className="text-gray-600 dark:text-gray-400 text-sm line-clamp-2 mb-4">
+              {blog.summary}
+            </p>
+          )}
 
           <div className="mt-2 mb-3">
             <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded">

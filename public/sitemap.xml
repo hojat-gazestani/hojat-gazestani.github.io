@@ -42,6 +42,12 @@
   <priority>0.70</priority>
 </url>
 <url>
+  <loc>https://hojat-gazestani.github.io/blogs/category/machine-learning/</loc>
+  <lastmod>2026-09-24</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.70</priority>
+</url>
+<url>
   <loc>https://hojat-gazestani.github.io/blogs/Linux-SetUID-SetGID-Stickybit/</loc>
   <lastmod>2025-09-03</lastmod>
   <changefreq>yearly</changefreq>
@@ -92,6 +98,126 @@
 <url>
   <loc>https://hojat-gazestani.github.io/blogs/configure-containerd-registries/</loc>
   <lastmod>2025-08-24</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/00-preface/01-introduction/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/01-machine-learning-fundamentals/01-what-is-ml/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/01-machine-learning-fundamentals/02-ml-categories/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/01-machine-learning-fundamentals/03-ml-toolbox/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/01-machine-learning-fundamentals/04-data-scrubbing/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/01-machine-learning-fundamentals/05-setting-up-your-data/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/02-classical-machine-learning/01-regression-analysis/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/02-classical-machine-learning/02-logistic-regression/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/02-classical-machine-learning/03-support-vector-machines/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/02-classical-machine-learning/04-k-nearest-neighbors/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/02-classical-machine-learning/05-clustering-introduction/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/02-classical-machine-learning/06-k-means-clustering/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/02-classical-machine-learning/07-setting-k/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/03-neural-networks/01-neural-networks/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/04-computer-visin/01-cnn-theory/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/05-natural-language-processing/01-transformers-and-llms/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/05-natural-language-processing/02-0-rag-langchian/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/05-natural-language-processing/02-1-langchian-Expression-Language-LCEL/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/05-natural-language-processing/03-rag-langgraph/</loc>
+  <lastmod>2025-09-06</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hojat-gazestani.github.io/blogs/machine-learning/05-natural-language-processing/04-multi-query-retrieval/</loc>
+  <lastmod>2025-09-06</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.80</priority>
 </url>
