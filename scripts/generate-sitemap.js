@@ -16,44 +16,40 @@ const blogs = fileNames.map((fileName) => {
   return { id, ...data };
 });
 
+// Deterministic, content-derived lastmod values (no build-time timestamps),
+// so the generated file is stable across builds and consistent in CI.
+const asTime = (value) => {
+  const t = new Date(value).getTime();
+  return Number.isNaN(t) ? null : t;
+};
+const isoDate = (time) =>
+  time ? new Date(time).toISOString().split("T")[0] : new Date().toISOString().split("T")[0];
+const newestTime = (dates) =>
+  dates.map(asTime).filter(Boolean).reduce((max, t) => Math.max(max, t), 0);
+
+const newestBlogTime = newestTime(blogs.map((blog) => blog.date));
 const categories = [...new Set(blogs.map((blog) => blog.category))].sort();
 
-const xmlUrls = [
-  `<url>
-  <loc>${BASE_URL}/</loc>
-  <lastmod>${new Date().toISOString().split("T")[0]}</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>${BASE_URL}/blogs/</loc>
-  <lastmod>${new Date().toISOString().split("T")[0]}</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.90</priority>
-</url>`,
-
-  ...categories.map(
-    (cat) => `<url>
-  <loc>${BASE_URL}/blogs/category/${cat}/</loc>
-  <lastmod>${new Date().toISOString().split("T")[0]}</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.70</priority>
-</url>`
-  ),
-
-  ...blogs.map(
-    (blog) => {
-      const date = new Date(blog.date);
-      const lastmod = isNaN(date.getTime())
-        ? new Date().toISOString().split("T")[0]
-        : date.toISOString().split("T")[0];
-      return `<url>
-  <loc>${BASE_URL}/blogs/${blog.id}/</loc>
+const url = (loc, lastmod, changefreq, priority) => `<url>
+  <loc>${loc}</loc>
   <lastmod>${lastmod}</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.80</priority>
+  <changefreq>${changefreq}</changefreq>
+  <priority>${priority}</priority>
 </url>`;
-    }
+
+const xmlUrls = [
+  url(`${BASE_URL}/`, isoDate(newestBlogTime), "monthly", "1.00"),
+  url(`${BASE_URL}/blogs/`, isoDate(newestBlogTime), "weekly", "0.90"),
+
+  ...categories.map((cat) => {
+    const catTime = newestTime(
+      blogs.filter((blog) => blog.category === cat).map((blog) => blog.date)
+    );
+    return url(`${BASE_URL}/blogs/category/${cat}/`, isoDate(catTime), "weekly", "0.70");
+  }),
+
+  ...blogs.map((blog) =>
+    url(`${BASE_URL}/blogs/${blog.id}/`, isoDate(asTime(blog.date)), "yearly", "0.80")
   ),
 ].join("\n");
 

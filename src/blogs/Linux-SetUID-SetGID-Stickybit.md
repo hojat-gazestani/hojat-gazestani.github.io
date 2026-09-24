@@ -1,7 +1,7 @@
 ---
 
 title: "Understanding Linux Special Permissions: SUID, SGID, and the Sticky Bit"
-date: 2025-09-03
+date: "2025-09-03"
 summary: "A clear guide to Linux's special permission bits - SUID, SGID, and Sticky Bit - and how to use them for system security and collaboration."
 tags: ["linux", "permissions", "suid", "sgid", "sticky-bit", "bash", "command-line", "sysadmin"]
 category: "Linux-Core"

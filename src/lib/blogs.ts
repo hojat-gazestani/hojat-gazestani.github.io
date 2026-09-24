@@ -44,9 +44,10 @@ export function getSortedBlogsData(): BlogMeta[] {
       };
     });
 
-  // Sort blogs by date
+  // Sort blogs by date (newest first), normalizing to a timestamp so mixed
+  // string/Date frontmatter values sort correctly.
   return allBlogsData.sort((a, b) => {
-    return a.date < b.date ? 1 : -1;
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
 }
 
