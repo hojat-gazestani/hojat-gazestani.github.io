@@ -30,7 +30,7 @@ export const Hero = () => {
                 <div className="relative">
                   <Image
                     src="/me.png"
-                    alt="Hojat Gazestani - DevOps & Cloud Engineer"
+                    alt="Hojat Gazestani - SRE / AI Infrastructure Engineer"
                     width={300}
                     height={300}
                     className="rounded-full shadow-2xl border-4 border-white dark:border-gray-800 transform hover:scale-105 transition-transform duration-300"
@@ -59,17 +59,15 @@ export const Hero = () => {
               className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
               itemProp="jobTitle"
             >
-              DevOps &{" "}
+              Senior SRE &{" "}
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Cloud Engineer
+                MLOps Engineer
               </span>
             </h2>
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-              Building resilient, scalable systems with modern cloud
-              technologies. Specializing in Kubernetes, AWS, Python/Django, and
-              DevOps automation.
+	      SRE/MLOps engineer who understands systems deeply and is now applying AI to that knowledge
             </p>
 
             {/* Key Highlights */}

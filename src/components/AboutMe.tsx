@@ -302,21 +302,28 @@ export const AboutMe = () => {
       <section className="mb-12">
         <div className="space-y-6 text-justify">
           <p className="text-lg text-gray-600 dark:text-gray-300 leading-8 hyphens-auto">
-            I am a seasoned DevOps & Cloud Engineer with over a decade of
-            experience specializing in building resilient, scalable systems. My
-            journey began programming in Pascal and Delphi, followed by C++
-            under mentorship, and evolved through mastering Linux, networking,
-            and security—eventually leading me to infrastructure automation with
-            Python, microservices, and cloud-native DevOps practices.
+	    Senior SRE / AI Infrastructure Engineer with 10+ years of hands-on
+	    experience building, operating, and automating reliable infrastructure
+	    and distributed systems. Strong background in Linux, networking, security,
+	    Kubernetes, cloud infrastructure, CI/CD, observability, and Python,
+	    with practical experience across AWS, Ansible, GitOps,
+	    Prometheus/VictoriaMetrics, Elasticsearch, and developer platforms.
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-300 leading-8 hyphens-auto">
-            Today, as a freelance Kubernetes, AWS, and DevOps engineer, I
-            architect and manage Kubernetes clusters, implement CI/CD and GitOps
-            pipelines, and develop web applications using Python and Django. I
-            automate infrastructure across platforms like OpenStack, AWS,
-            Docker, and more. I&apos;m passionate about delivering stability
-            without sacrificing velocity—empowering development teams to iterate
-            quickly and confidently.
+	    Experienced in connecting knowledge across infrastructure layers—from Linux
+	    and networking to Kubernetes, security, monitoring, and automation—to troubleshoot
+	    complex production problems and build reliable systems. Recently focused
+	    on applying AI, LLMs, RAG, agentic systems, LangGraph, and MCP to infrastructure
+	    and SRE workflows, including incident analysis, observability,
+	    troubleshooting, infrastructure automation, and developer productivity.
+          </p>
+          <p className="text-lg text-gray-600 dark:text-gray-300 leading-8 hyphens-auto">
+	    Passionate about technology and continuous learning,
+	    with a strong ability to quickly learn new tools, systems,
+	    and technologies and turn them into practical solutions. Motivated
+	    by understanding how systems work end-to-end, automating repetitive
+	    operational work, and using AI to make infrastructure operations
+	    more intelligent, efficient, and reliable.
           </p>
         </div>
       </section>
